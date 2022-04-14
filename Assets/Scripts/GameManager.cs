@@ -45,12 +45,6 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void Start()
-    {
-        //DEBUG CODE
-        StartGame();
-    }
-
     public void StartGame()
     {
         //load game scene
