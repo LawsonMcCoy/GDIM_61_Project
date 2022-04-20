@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public const string PLAYER_SPAWN_TAG = "Respawn";
+    public const string PLAYER_SPAWN_TAG = "Spawn Point";
 
     //This is a enum to represent the scenes in the game
     //NOTE: the enum values must appear in the same order as
