@@ -373,6 +373,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 547675871878568478, guid: 8c577b0c7aaad187a9caecc3bf6785d9, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: -1862207860930618491, guid: 6625566c63d913e49853d620203ef1f6, type: 3}
+    - target: {fileID: 547675871878568478, guid: 8c577b0c7aaad187a9caecc3bf6785d9, type: 3}
+      propertyPath: cameraPositionInPlayerSpace.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1207269315961963716, guid: 8c577b0c7aaad187a9caecc3bf6785d9, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1141,6 +1149,10 @@ PrefabInstance:
     - target: {fileID: 4474642924259947662, guid: 2675304a1e83b946b936d647a2ca0e73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523665350378400106, guid: 2675304a1e83b946b936d647a2ca0e73, type: 3}
+      propertyPath: playersLayer.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7124191120211332655, guid: 2675304a1e83b946b936d647a2ca0e73, type: 3}
       propertyPath: m_Name
