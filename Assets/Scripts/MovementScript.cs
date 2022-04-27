@@ -18,6 +18,10 @@ public class MovementScript : MonoBehaviour
 
 
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Update()
     {
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal") * Speed, 0, Input.GetAxis("Vertical") * Speed);
