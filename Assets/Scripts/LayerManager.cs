@@ -14,8 +14,20 @@ using UnityEngine;
 public class LayerManager : MonoBehaviour
 {
     //The layers in Unity
+    [SerializeField] LayerMask[] layers; //an array to store the value for each layer
+                                         //setted in the inspector, ensure that the
+                                         //inspector is in the same order of layerNames
     [SerializeField] LayerMask playersLayer;
     [SerializeField] LayerMask enemyLayer;
+
+    //By defualt the layer names will be the index
+    //of the corresponding layer, ensure that layerNames
+    //appear in the same order that they do in the inspector
+    public enum layerNames
+    {
+        PLAYER,
+        ENEMY
+    }
 
     //This class is a singleton
     public static LayerManager Instance
@@ -31,6 +43,30 @@ public class LayerManager : MonoBehaviour
 
         //enforces singleton
         DontDestroyOnLoad(this);
+    }
+
+    public LayerMask GetLayerMask(layerNames[] layersToMask)
+    {
+        LayerMask returnMask = 0; //the mask to be returned
+
+        //create layer mask
+        for (int layerIndex = 0; layerIndex < layersToMask.Length; layerIndex++)
+        {
+            returnMask = returnMask.value | layers[(int)layersToMask[layerIndex]].value;
+        }
+
+        //return the layer mask
+        return returnMask;
+    }
+
+    public bool ObjectInLayerMask(GameObject gameObject, LayerMask mask)
+    {
+        //get the mask of the game object by shifting 1 left by gameObject.layer
+        int gameObjectMask = 1 << gameObject.layer;
+
+        //if the logical and produces 0 then the gameObject is not in mask
+        //if the logical and produces anything else then the gameObject is in the mask
+        return (gameObjectMask & mask) == 0;
     }
 
     public LayerMask GetPlayerLayerMask()
