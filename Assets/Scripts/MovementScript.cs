@@ -11,6 +11,7 @@ public class MovementScript : MonoBehaviour
     private float xRotation;
 
     [SerializeField] private CharacterController Controller;
+    [SerializeField] private Rigidbody playerRigidbody;
     [SerializeField] private float Speed;
     [SerializeField] private float JumpForce;
     [SerializeField] private float Gravity;
@@ -64,4 +65,10 @@ public class MovementScript : MonoBehaviour
         PlayerMovementInput = new Vector3(movementIn2D.x, 0, movementIn2D.y);
         MovePlayer();
     } 
+
+    private void OnJump()
+    {
+        Vector3 jumpVector
+        playerRigidbody.AddForce()
+    }
 }
