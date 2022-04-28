@@ -36,11 +36,22 @@ public abstract class Weapon : MonoBehaviour
     {
         //display the weapon
         gameObject.SetActive(true);
+
+        //friendly reminders
+        if (baseRange == 0)
+        {
+            Debug.LogWarning("Base range of current weapon is 0");
+        }
+
+        if (baseDamage == 0)
+        {
+            Debug.LogWarning("Base damage of current weapon is 0");
+        }
     }
 
     public void Unequip()
     {
-        
+        gameObject.SetActive(false);
     }
 
     public virtual void PrimaryFire()
