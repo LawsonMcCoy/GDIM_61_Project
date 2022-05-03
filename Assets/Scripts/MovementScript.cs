@@ -66,9 +66,9 @@ public class MovementScript : MonoBehaviour
         MovePlayer();
     } 
 
-    private void OnJump()
-    {
-        Vector3 jumpVector
-        playerRigidbody.AddForce()
-    }
+    // private void OnJump()
+    // {
+    //     Vector3 jumpVector
+    //     playerRigidbody.AddForce()
+    // }
 }
