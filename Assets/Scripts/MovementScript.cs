@@ -20,42 +20,55 @@ public class MovementScript : MonoBehaviour
 
 
 
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
-    void Update()
+
+    private void Update()
     {
         // PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal") * Speed, 0, Input.GetAxis("Vertical") * Speed);
         // PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         // MoveCamera();
         MovePlayer();
 
+        if (Controller.isGrounded)
+        {
+            Velocity.y -= Gravity * -2 * Time.deltaTime;
+        }
+
     }
     private void MovePlayer()
     {
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput);
-        Controller.Move(MoveVector * Time.deltaTime);
-        Controller.Move(Velocity * Time.deltaTime);
-        // if (Controller.isGrounded)
-        // {
-        //     Velocity.y = -1;
-        //     if (Input.GetKeyDown(KeyCode.Space))
-        //     {
-        //         Velocity.y = JumpForce;
-        //     }
-        // }
-        // else
-        // {
-        //     Velocity.y -= Gravity * -2 * Time.deltaTime;
-        // }
+        Debug.Log($"MoveVector: {PlayerMovementInput}");
+        Controller.Move((MoveVector * Time.deltaTime * Speed) + (Velocity * Time.deltaTime));
+        // Controller.Move(Velocity * Time.deltaTime);
     }
+
+    private void OnTurning(InputValue value)
+    {
+        Vector2 rotationValue = value.Get<Vector2>();
+        rotationValue = rotationValue * Time.deltaTime;
+        // Debug.Log($"Turning: {rotationValue}");
+
+        RotatePlayer(rotationValue);
+    }
+
     private void MoveCamera()
     {
         xRotation -= PlayerMouseInput.y * Sensitivity;
 
         transform.Rotate(0, PlayerMouseInput.x * Sensitivity, 0);
         PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
+    }
+
+    private void RotatePlayer(Vector2 rotation)
+    {
+        xRotation -= rotation.y * Sensitivity;
+
+        transform.Rotate(0, rotation.x * Sensitivity, 0);
+        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0); 
     }
 
     private void OnMovement(InputValue value)
@@ -66,9 +79,24 @@ public class MovementScript : MonoBehaviour
         MovePlayer();
     } 
 
-    // private void OnJump()
-    // {
-    //     Vector3 jumpVector
-    //     playerRigidbody.AddForce()
-    // }
+    private void OnJump(InputValue value)
+    {
+         if (Controller.isGrounded)
+        {
+            Velocity.y = -1;
+            if (value.isPressed)
+            {
+                Velocity.y = JumpForce;
+            }
+        }
+        else
+        {
+            Velocity.y -= Gravity * -2 * Time.deltaTime;
+        }
+    }
+
+    public void SetCameraTransform(Transform cameraTransform)
+    {
+        PlayerCamera = cameraTransform;
+    }
 }

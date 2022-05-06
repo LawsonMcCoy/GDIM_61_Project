@@ -91,8 +91,10 @@ public class GameManager : MonoBehaviour
         GameObject camera = GameObject.FindWithTag(MAIN_CAMERA); //get reference to the camera's transform
         camera.transform.SetParent(player.transform); //set the player as the parent so the camera follows them
         //set camera position and rotations in player space
-        camera.transform.position = cameraPositionInPlayerSpace;
-        camera.transform.rotation = cameraRotationInPlayerSpace;
+        camera.transform.localPosition = cameraPositionInPlayerSpace;
+        camera.transform.localRotation = cameraRotationInPlayerSpace;
+        //inform the player about the camera
+        player.GetComponent<MovementScript>().SetCameraTransform(camera.transform);
         
     }
 

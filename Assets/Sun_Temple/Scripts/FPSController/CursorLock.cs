@@ -9,35 +9,35 @@ namespace Sun_Temple{
 
 		private bool isLocked;
 
-		void Start(){
-			isLocked = true;
-		}
+		// void Start(){
+		// 	isLocked = true;
+		// }
 
 
 	
 
-		void Update(){
+		// void Update(){
 			
-			if (Input.GetKeyDown (KeyCode.Escape)) {
-				if (isLocked) {
-					isLocked = false;
-				} else if (!isLocked) {
-					isLocked = true;
-				}
-			}
+		// 	if (Input.GetKeyDown (KeyCode.Escape)) {
+		// 		if (isLocked) {
+		// 			isLocked = false;
+		// 		} else if (!isLocked) {
+		// 			isLocked = true;
+		// 		}
+		// 	}
 
 
 
-			if (isLocked) {
-				Cursor.lockState = CursorLockMode.Locked;
-				Cursor.visible = false;
-			}
+		// 	if (isLocked) {
+		// 		Cursor.lockState = CursorLockMode.Locked;
+		// 		Cursor.visible = false;
+		// 	}
 
-			if (!isLocked) {
-				Cursor.lockState = CursorLockMode.None;
-				Cursor.visible = true;
-			}
-		}
+		// 	if (!isLocked) {
+		// 		Cursor.lockState = CursorLockMode.None;
+		// 		Cursor.visible = true;
+		// 	}
+		// }
 
 			
 
