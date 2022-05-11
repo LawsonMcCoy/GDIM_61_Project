@@ -27,6 +27,11 @@ abstract public class GenericHealth : MonoBehaviour
         currentHealth -= damage;
 
         this.setHealth(currentHealth);
+
+        if (currentHealth < 0)
+        {
+            onDeath();
+        }
     }
 
     private void Awake()

@@ -91,4 +91,21 @@ public class GameManager : MonoBehaviour
         //Actaully load the new current scene
         SceneManager.LoadScene((int)currentScene);
     }
+
+    private void Start()
+    {
+        EventManager.Instance.Subscribe(EventTypes.Events.PLAYER_DEATH, death);
+    }
+
+    //this is a temp. function to be deleted later
+    void death()
+    {
+        Debug.Log("player dead");
+    }
+
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.Unsubscribe(EventTypes.Events.PLAYER_DEATH, death);
+    }
 }
