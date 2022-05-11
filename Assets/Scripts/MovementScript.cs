@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    private Vector3 Velocity;
+    private Vector3 Velocity;ddddddddddddddddddddddddddddddddddwwwwwww
     private Vector3 PlayerMovementInput;
     private Vector2 PlayerMouseInput;
     private float xRotation;
@@ -26,7 +26,7 @@ public class MovementScript : MonoBehaviour
     {
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal") * Speed, 0, Input.GetAxis("Vertical") * Speed);
         PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        MoveCamera();
+        // MoveCamera();
         MovePlayer();
 
     }
@@ -53,5 +53,6 @@ public class MovementScript : MonoBehaviour
         xRotation -= PlayerMouseInput.y * Sensitivity;
 
         transform.Rotate(0, PlayerMouseInput.x * Sensitivity, 0);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    }
+        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
+    }
 }
