@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
-
+public class PlayerHealth : GenericHealth
 {
-    public Slider slider;
     // Start is called before the first frame update
-    public void setMaxHealth(int health)
+    protected override void Start()
     {
-        slider.maxValue = health;
-        slider.value = health;
+        slider = HUD.Instance.getSlider();
+        base.Start();
+        
     }
 
-    public void setHealth(int health)
+    override protected void onDeath()
     {
-        slider.value = health;
+        EventManager.Instance.Notify(EventTypes.Events.PLAYER_DEATH);
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

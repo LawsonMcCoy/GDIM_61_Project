@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public const string PLAYER_SPAWN_TAG = "Respawn";
+    public const string PLAYER_SPAWN_TAG = "Spawn Point";
+    public const string MAIN_CAMERA = "MainCamera";
 
     //This is a enum to represent the scenes in the game
     //NOTE: the enum values must appear in the same order as
@@ -23,7 +24,11 @@ public class GameManager : MonoBehaviour
     scenes currentScene; //A variable to keep track of the current loaded scene
 
 
-    [SerializeField] Player playerPrefab;
+    [SerializeField] private Player playerPrefab;
+
+    //Camera set up
+    [SerializeField] private Vector3 cameraPositionInPlayerSpace;
+    [SerializeField] private Quaternion cameraRotationInPlayerSpace;
 
     //GameManager is a singleton
     public GameManager Instance
@@ -80,7 +85,15 @@ public class GameManager : MonoBehaviour
             Debug.LogError("No player spawn point in current scene. Please make an empty game object to be the spawn point and tag it apporiately.");
             return; //return to avoid null deference
         }
-        Instantiate(playerPrefab, spawnPoint.transform.position, playerPrefab.transform.rotation);
+        Player player = Instantiate(playerPrefab, spawnPoint.transform.position, playerPrefab.transform.rotation);
+
+        //Set first person camera
+        GameObject camera = GameObject.FindWithTag(MAIN_CAMERA); //get reference to the camera's transform
+        camera.transform.SetParent(player.transform); //set the player as the parent so the camera follows them
+        //set camera position and rotations in player space
+        camera.transform.position = cameraPositionInPlayerSpace;
+        camera.transform.rotation = cameraRotationInPlayerSpace;
+        
     }
 
     private void LoadNewScene(scenes sceneToLoad)
@@ -90,5 +103,22 @@ public class GameManager : MonoBehaviour
 
         //Actaully load the new current scene
         SceneManager.LoadScene((int)currentScene);
+    }
+
+    private void Start()
+    {
+        EventManager.Instance.Subscribe(EventTypes.Events.PLAYER_DEATH, death);
+    }
+
+    //this is a temp. function to be deleted later
+    void death()
+    {
+        Debug.Log("player dead");
+    }
+
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.Unsubscribe(EventTypes.Events.PLAYER_DEATH, death);
     }
 }
