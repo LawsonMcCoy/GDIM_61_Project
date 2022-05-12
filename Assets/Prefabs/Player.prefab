@@ -134,11 +134,14 @@ MonoBehaviour:
   Controller: {fileID: 2256878145119773492}
   playerRigidbody: {fileID: 7081696405261643601}
   Speed: 5
-  JumpForce: 5
+  SprintModifier: 2
+  JumpForce: 3
   Gravity: -9.81
   TerminalVelocity: -20
   PlayerCamera: {fileID: 0}
-  Sensitivity: 10
+  Sensitivity: 1
+  MaxXRotation: 90
+  MinXRotation: -90
 --- !u!114 &-1862207860930618491
 MonoBehaviour:
   m_ObjectHideFlags: 0

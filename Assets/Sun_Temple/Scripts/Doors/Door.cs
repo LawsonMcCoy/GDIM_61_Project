@@ -89,7 +89,7 @@ namespace SunTemple
 					
 				}else
 				{ 
-					Debug.Log(transform.position); 
+					// Debug.Log(transform.position); 
 				}
 			}
 
