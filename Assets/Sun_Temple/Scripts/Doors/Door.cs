@@ -11,6 +11,7 @@ namespace SunTemple
     {
 		public bool IsLocked = false;
         public bool DoorClosed = true;
+		public bool FirstDoor = false;
         public float OpenRotationAmount = 90;
         public float RotationSpeed = 1f;
         public float MaxDistance = 3.0f;
@@ -82,6 +83,13 @@ namespace SunTemple
 
 				if (cursor != null) {
 					CursorHint ();
+				}
+                if (FirstDoor)
+                {
+					
+				}else
+				{ 
+					Debug.Log(transform.position); 
 				}
 			}
 
