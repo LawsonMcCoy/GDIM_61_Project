@@ -138,7 +138,9 @@ MonoBehaviour:
   Gravity: -9.81
   TerminalVelocity: -20
   PlayerCamera: {fileID: 0}
-  Sensitivity: 10
+  Sensitivity: 1
+  MaxXRotation: 90
+  MinXRotation: -90
 --- !u!114 &-1862207860930618491
 MonoBehaviour:
   m_ObjectHideFlags: 0
