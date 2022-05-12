@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2256878145119773492}
   - component: {fileID: 2256878145119773489}
   - component: {fileID: -1862207860930618491}
+  - component: {fileID: 4662663392129487170}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -133,6 +134,8 @@ MonoBehaviour:
   Speed: 1
   JumpForce: 10
   Gravity: -9.81
+  PlayerCamera: {fileID: 0}
+  Sensitivity: 0
 --- !u!114 &-1862207860930618491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +148,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9637dde2b1e93ffa5907bde41de87f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 4662663392129487170}
+--- !u!114 &4662663392129487170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256878145119773483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa515bb675624ae45a8f445b88a9a44c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  slider: {fileID: 0}

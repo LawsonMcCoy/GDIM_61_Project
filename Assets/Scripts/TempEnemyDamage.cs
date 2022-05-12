@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class TempEnemyDamage : MonoBehaviour
 {
 
-    
+
     // Start is called before the first frame update
-    public PlayerHealth playerHealth;
+    public EnemyHealth playerHealth;
 
 
     private void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,5 +24,5 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+
 }

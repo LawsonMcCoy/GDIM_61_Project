@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    private Vector3 Velocity;ddddddddddddddddddddddddddddddddddwwwwwww
+    private Vector3 Velocity;
     private Vector3 PlayerMovementInput;
     private Vector2 PlayerMouseInput;
     private float xRotation;
