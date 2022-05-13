@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : Entity
 {
@@ -16,7 +17,10 @@ public class Player : Entity
     private Weapon equipped;
 
     // Start is called before the first frame update
-    void Start()
+    public PlayerHealth playerHealth;
+
+
+    private void Start()
     {
         //Create starting weapon
         equipped = Instantiate(startingWeapon, this.transform.position + weaponPosition, this.transform.rotation, this.transform);
@@ -25,12 +29,14 @@ public class Player : Entity
         equipped.Equip();
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    private void OnPrimaryFire(InputValue value)
     {
-        if (Input.GetMouseButtonDown((int)MouseButtons.LEFT_CLICK))
+        if (value.isPressed)
         {
             equipped.PrimaryFire();
         }
     }
+
+    
 }
