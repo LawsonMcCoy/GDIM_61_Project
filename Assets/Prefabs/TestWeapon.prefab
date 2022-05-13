@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryAmmo: {fileID: 7378440038210895632, guid: 584408be8dc2f0f9f85245375dc9d19e, type: 3}
-  hasSecondaryFire: 0
-  secondaryAmmo: {fileID: 0}
-  baseDamage: 0
+  hasSecondaryFire: 1
+  secondaryAmmo: {fileID: 3299306216194264654, guid: 3950b0acca190e1f48004abe8f3fb3d0, type: 3}
+  baseDamage: 20
   baseRange: 20
 --- !u!23 &5967591865607688971
 MeshRenderer:

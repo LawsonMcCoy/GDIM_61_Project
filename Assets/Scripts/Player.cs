@@ -38,5 +38,13 @@ public class Player : Entity
         }
     }
 
+    private void OnSecondaryFire(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            equipped.SecondaryFire();
+        }
+    }
+
     
 }

@@ -11,7 +11,7 @@ public abstract class Weapon : MonoBehaviour
     private LayerMask targets; //A layerMask for the targets the gun can shoot
 
     //stats
-    [SerializeField] protected float baseDamage;
+    [SerializeField] protected int baseDamage;
     [SerializeField] protected float baseRange;
     
 
@@ -57,6 +57,14 @@ public abstract class Weapon : MonoBehaviour
     public virtual void PrimaryFire()
     {
         primaryAmmo.Fire(baseRange);
+    }
+
+    public virtual void SecondaryFire()
+    {
+        if (hasSecondaryFire)
+        {
+            secondaryAmmo.Fire(baseRange);
+        }
     }
 
     public abstract void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indierctHit);

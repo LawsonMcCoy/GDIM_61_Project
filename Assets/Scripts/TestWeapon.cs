@@ -9,6 +9,6 @@ public class TestWeapon : Weapon
     public override void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indirectHit)
     {
         //This gun is just dealing base damage
-        Destroy(directHit[0].gameObject);
+        directHit[0].health.TakeDamage(baseDamage);
     }
 }

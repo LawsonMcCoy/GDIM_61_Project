@@ -66,7 +66,7 @@ public class LayerManager : MonoBehaviour
 
         //if the logical and produces 0 then the gameObject is not in mask
         //if the logical and produces anything else then the gameObject is in the mask
-        return (gameObjectMask & mask) == 0;
+        return (gameObjectMask & mask) != 0;
     }
 
     public LayerMask GetPlayerLayerMask()

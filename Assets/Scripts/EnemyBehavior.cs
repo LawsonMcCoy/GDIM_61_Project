@@ -48,19 +48,16 @@ public class EnemyBehavior : BehaviorBase
         LayerMask playerLayer = LayerManager.Instance.GetPlayerLayerMask();
         Collider[] targets; //array of targets found by the scan
 
-        Debug.Log($"Mask: {playerLayer.value}");
         targets = Physics.OverlapSphere(this.transform.position, scanRadius, playerLayer);
 
         //game is only single player right now, and probably forever
         //if targets is not null then set the target to the first element
         if (targets == null || targets.Length == 0)
         {
-            Debug.Log("No target");
             target = null;
         }
         else
         {
-            Debug.Log("Found a target");
             target = targets[0].gameObject.GetComponent<Player>();
         }
     }

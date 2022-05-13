@@ -56,6 +56,10 @@ public class BasicProjectileBullet : Bullet
 
         //Instantiate projectile
         projectile = Instantiate(this, fireTransform.position, fireTransform.rotation);
+
+        //Set up the projectile's targets and callback
+        projectile.SetTargets(targets);
+        projectile.OnHit = this.OnHit;
         
         //launch the projectile
         projectile.LaunchProjectile(range);
@@ -63,6 +67,16 @@ public class BasicProjectileBullet : Bullet
 
     private void OnTriggerEnter(Collider collidedWith)
     {
-        //This function will require LayerManager which is unforunately in the other branch
+        //Check the mask to make sure the collider is a target
+        if (LayerManager.Instance.ObjectInLayerMask(collidedWith.gameObject, targets))
+        {
+            //a target was hit
+
+            //Retrive the target, and put into array of size one for callback
+            Entity[] targetHit = {collidedWith.GetComponent<Entity>()};
+
+            //Callback so the weapon can decide what to do
+            OnHit(targetHit, null); //null since there is not AOE for indirect hit
+        }
     }
 }

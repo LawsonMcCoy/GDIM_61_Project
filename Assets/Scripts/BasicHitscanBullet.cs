@@ -16,7 +16,6 @@ public class BasicHitscanBullet : Bullet
 
             //Callback so the weapon can decide what to do
             OnHit(targetHit, null); //null since there is not AOE for indirect hit
-
         }
     }
 }
