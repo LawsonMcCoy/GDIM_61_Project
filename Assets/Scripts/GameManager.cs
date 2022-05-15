@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public const string PLAYER_SPAWN_TAG = "Spawn Point";
     public const string MAIN_CAMERA = "MainCamera";
 
+    public GameOverScreen GameOverScreen;
+
     //This is a enum to represent the scenes in the game
     //NOTE: the enum values must appear in the same order as
     //there corresponding scenes appear in the build setting 
@@ -115,7 +117,7 @@ public class GameManager : MonoBehaviour
     //this is a temp. function to be deleted later
     void death()
     {
-        Debug.Log("player dead");
+        GameOverScreen.SetScreen();
     }
 
 
