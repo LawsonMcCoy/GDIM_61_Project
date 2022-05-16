@@ -8,18 +8,13 @@ public class GameManager : MonoBehaviour
     public const string PLAYER_SPAWN_TAG = "Spawn Point";
     public const string MAIN_CAMERA = "MainCamera";
 
-    //This is a enum to represent the scenes in the game
-    //NOTE: the enum values must appear in the same order as
-    //there corresponding scenes appear in the build setting 
-    //windows. If this order is maintained, then the default 
-    //int values for enum (0, 1, 2, ...) for each scene be 
-    //the same as the build index for the corresponding scene
-    //To recove this build index simple cast the emun into
-    //an int
+    public GameOverScreen gameOver;
+
+
     private enum scenes
     {
         MAIN_MENU_SCENE,
-        GAME_SCENE
+        GAME_SCENE,
     };
     scenes currentScene; //A variable to keep track of the current loaded scene
 
@@ -91,8 +86,10 @@ public class GameManager : MonoBehaviour
         GameObject camera = GameObject.FindWithTag(MAIN_CAMERA); //get reference to the camera's transform
         camera.transform.SetParent(player.transform); //set the player as the parent so the camera follows them
         //set camera position and rotations in player space
-        camera.transform.position = cameraPositionInPlayerSpace;
-        camera.transform.rotation = cameraRotationInPlayerSpace;
+        camera.transform.localPosition = cameraPositionInPlayerSpace;
+        camera.transform.localRotation = cameraRotationInPlayerSpace;
+        //inform the player about the camera
+        player.GetComponent<MovementScript>().SetCameraTransform(camera.transform);
         
     }
 
@@ -111,9 +108,11 @@ public class GameManager : MonoBehaviour
     }
 
     //this is a temp. function to be deleted later
-    void death()
+    public void death()
     {
-        Debug.Log("player dead");
+
+        SceneManager.LoadScene("GameOVER");
+
     }
 
 
