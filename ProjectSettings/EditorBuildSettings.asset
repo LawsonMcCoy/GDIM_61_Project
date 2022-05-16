@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Our Game/Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Our Game/PlayerMoveScene.unity
+    guid: 8c4d239ff4cd49416af3b398ab541fcb
+  - enabled: 1
+    path: Assets/Our Game/GameOVER.unity
+    guid: d3f41380f5e1f432f9f7c6df95aba05f
+  - enabled: 1
+    path: Assets/Our Game/Win!.unity
+    guid: 9024f0260b4a84c0a9d3c82f2818de63
   m_configObjects: {}

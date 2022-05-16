@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerHealth.TakeDamage(20);
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene("Win!");
         }
     }
 

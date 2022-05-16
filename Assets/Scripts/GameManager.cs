@@ -8,20 +8,13 @@ public class GameManager : MonoBehaviour
     public const string PLAYER_SPAWN_TAG = "Spawn Point";
     public const string MAIN_CAMERA = "MainCamera";
 
-    public GameOverScreen GameOverScreen;
+    public GameOverScreen gameOver;
 
-    //This is a enum to represent the scenes in the game
-    //NOTE: the enum values must appear in the same order as
-    //there corresponding scenes appear in the build setting 
-    //windows. If this order is maintained, then the default 
-    //int values for enum (0, 1, 2, ...) for each scene be 
-    //the same as the build index for the corresponding scene
-    //To recove this build index simple cast the emun into
-    //an int
+
     private enum scenes
     {
         MAIN_MENU_SCENE,
-        GAME_SCENE
+        GAME_SCENE,
     };
     scenes currentScene; //A variable to keep track of the current loaded scene
 
@@ -115,9 +108,11 @@ public class GameManager : MonoBehaviour
     }
 
     //this is a temp. function to be deleted later
-    void death()
+    public void death()
     {
-        GameOverScreen.SetScreen();
+
+        SceneManager.LoadScene("GameOVER");
+
     }
 
 

@@ -8,21 +8,25 @@ public class GameOverScreen : MonoBehaviour
 {
     public GameObject GameOverMenu;
 
-    public void SetScreen()
+    
+    public void Start()
     {
-        GameOverMenu.SetActive(true);
-        Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
+
+   
+    
 
     public void Restart()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("PlayerMoveScene");
 
     }
 
     public void Quit()
     {
-        SceneManager.LoadScene("Main Menu");
+        Application.Quit();
 
     }
 }
