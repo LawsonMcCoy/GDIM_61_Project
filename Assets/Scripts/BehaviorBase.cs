@@ -4,11 +4,13 @@ using UnityEngine.AI;
 public abstract class BehaviorBase : MonoBehaviour
 {
     [SerializeField] protected NavMeshAgent agent;
+    [SerializeField] protected BehaviourTree behavior;
 
     protected abstract void PerformBehavior();
 
     protected void Update()
     {
+        // behavior.Process();
         PerformBehavior();
     }
     

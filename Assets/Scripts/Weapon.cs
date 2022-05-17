@@ -102,10 +102,28 @@ public abstract class Weapon : MonoBehaviour
     {
         this.targets = targets;
     }
+
+    public WeaponStats GetWeaponStats()
+    {
+        WeaponStats returnValue = new WeaponStats();
+
+        returnValue.damage = baseDamage;
+        returnValue.range = baseRange;
+        returnValue.rateOfFire = fireRate;
+    
+        return returnValue;
+    }
 }
 
 public struct IndirectHitInfo
 {
     Entity targetHit; //The the target that was hit indirectly
     float distanceFromHit; //The distance between the target and the actual hit point
+}
+
+public struct WeaponStats
+{
+    public int damage;
+    public float range;
+    public float rateOfFire;
 }

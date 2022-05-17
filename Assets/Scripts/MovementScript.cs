@@ -72,7 +72,7 @@ public class MovementScript : MonoBehaviour
         xRotation -= PlayerMouseInput.y * Sensitivity;
 
         transform.Rotate(0, PlayerMouseInput.x * Sensitivity, 0);
-        player.playerLookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
+        player.lookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
     }
 
     private void RotatePlayer(Vector2 rotation)
@@ -81,7 +81,7 @@ public class MovementScript : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, MinXRotation, MaxXRotation);
 
         transform.Rotate(0, rotation.x * Sensitivity, 0);
-        player.playerLookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
+        player.lookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
     }
 
     private void OnMovement(InputValue value)
