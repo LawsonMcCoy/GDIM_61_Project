@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         EventManager.Instance.Subscribe(EventTypes.Events.PLAYER_DEATH, death);
+        EventManager.Instance.Subscribe(EventTypes.Events.GAME_VICTORY, win);
     }
 
     //this is a temp. function to be deleted later
@@ -113,6 +114,10 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("GameOVER");
 
+    }
+    public void win()
+    {
+        SceneManager.LoadScene("Win!");
     }
 
 
