@@ -1,26 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
+    [SerializeField] Vector3 weaponPosition; //where the weapon being held is relative to the entity 
+    enum MouseButtons
+    {
+        LEFT_CLICK,
+        RIGHT_CLICK,
+        MIDDLE_CLICK
+    }
 
-    
+    [SerializeField] private Weapon startingWeapon;
+    private Weapon equipped;
+
+    [SerializeField] GameObject lookAtRig;
+    public GameObject playerLookDirection
+    {
+        get {return lookAtRig;}
+        private set {lookAtRig = playerLookDirection;}
+    }
+
+
     // Start is called before the first frame update
     public PlayerHealth playerHealth;
 
 
     private void Start()
     {
-        
+        //Create starting weapon
+        equipped = Instantiate(startingWeapon, playerLookDirection.transform.position + weaponPosition, this.transform.rotation, playerLookDirection.transform);
+        equipped.SetTargets(targetsToDamage);
+
+        equipped.Equip();
     }
 
-    // Update is called once per frame
-    private void Update()
+    
+    private void OnPrimaryFire(InputValue value)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (value.isPressed)
         {
-            playerHealth.TakeDamage(20);
+            equipped.PrimaryFire();
+        }
+    }
+
+    private void OnSecondaryFire(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            equipped.SecondaryFire();
         }
     }
 
