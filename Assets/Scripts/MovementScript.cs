@@ -12,14 +12,15 @@ public class MovementScript : MonoBehaviour
     private Vector2 rotationValue;
     private bool sprinting;
 
-    [SerializeField] private CharacterController Controller;
-    [SerializeField] private Rigidbody playerRigidbody;
+    [SerializeField] private CharacterController Controller; //should be replaced with player.controller
+    [SerializeField] private Rigidbody playerRigidbody; //should be replaced with entity.rigidbody
+    [SerializeField] private Player player;
     [SerializeField] private float Speed;
     [SerializeField] private float SprintModifier;
     [SerializeField] private float JumpForce;
     [SerializeField] private float Gravity;
     [SerializeField] private float TerminalVelocity;
-    [SerializeField] private Transform PlayerCamera;
+    [SerializeField] private Transform PlayerCamera; //should be replaced with player.camera
     [SerializeField] private float Sensitivity;
     [SerializeField] private float MaxXRotation;
     [SerializeField] private float MinXRotation;
@@ -71,7 +72,7 @@ public class MovementScript : MonoBehaviour
         xRotation -= PlayerMouseInput.y * Sensitivity;
 
         transform.Rotate(0, PlayerMouseInput.x * Sensitivity, 0);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
+        player.playerLookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
     }
 
     private void RotatePlayer(Vector2 rotation)
@@ -80,7 +81,7 @@ public class MovementScript : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, MinXRotation, MaxXRotation);
 
         transform.Rotate(0, rotation.x * Sensitivity, 0);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0); 
+        player.playerLookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
     }
 
     private void OnMovement(InputValue value)

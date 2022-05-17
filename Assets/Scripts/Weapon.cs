@@ -13,7 +13,24 @@ public abstract class Weapon : MonoBehaviour
     //stats
     [SerializeField] protected int baseDamage;
     [SerializeField] protected float baseRange;
+    [SerializeField] protected float fireRate; //time between shots
+
+    private float timeOfCooldownExpiration; //The time the weapon will be ready to fire again
+
+    //firing modes
+    enum FiringMode
+    {
+        AUTOMATIC,
+        SEMIAUTOMATIC
+    };
+    [SerializeField] private FiringMode primaryFiringMode;
+    [SerializeField] private FiringMode secondaryFiringMode; 
     
+    private void Awake()
+    {
+        //Start the weapon off cooldown
+        timeOfCooldownExpiration = 0f;
+    }
 
     private void Start()
     {
@@ -30,6 +47,9 @@ public abstract class Weapon : MonoBehaviour
         } 
     }
 
+    //A wrapper around the normal instantiate function
+    //that will aid in setting up the weapon
+    // public Weapon Instantiate(Weapon weaponPrefab, Transform entityTransform, Vector3 holdingPosition)
 
     //equipping the weapon in the game
     public void Equip()
@@ -56,14 +76,23 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void PrimaryFire()
     {
-        primaryAmmo.Fire(baseRange);
+        if (Time.time > timeOfCooldownExpiration)
+        {
+            primaryAmmo.Fire(baseRange);
+
+            //update cooldown time
+            timeOfCooldownExpiration = Time.time + fireRate;
+        }
     }
 
     public virtual void SecondaryFire()
     {
-        if (hasSecondaryFire)
+        if (hasSecondaryFire && Time.time > timeOfCooldownExpiration)
         {
             secondaryAmmo.Fire(baseRange);
+
+            //update cooldown time
+            timeOfCooldownExpiration = Time.time + fireRate;
         }
     }
 

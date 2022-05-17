@@ -16,6 +16,14 @@ public class Player : Entity
     [SerializeField] private Weapon startingWeapon;
     private Weapon equipped;
 
+    [SerializeField] GameObject lookAtRig;
+    public GameObject playerLookDirection
+    {
+        get {return lookAtRig;}
+        private set {lookAtRig = playerLookDirection;}
+    }
+
+
     // Start is called before the first frame update
     public PlayerHealth playerHealth;
 
@@ -23,7 +31,7 @@ public class Player : Entity
     private void Start()
     {
         //Create starting weapon
-        equipped = Instantiate(startingWeapon, this.transform.position + weaponPosition, this.transform.rotation, this.transform);
+        equipped = Instantiate(startingWeapon, playerLookDirection.transform.position + weaponPosition, this.transform.rotation, playerLookDirection.transform);
         equipped.SetTargets(targetsToDamage);
 
         equipped.Equip();
