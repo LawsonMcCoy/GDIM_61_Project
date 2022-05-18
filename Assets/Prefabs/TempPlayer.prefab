@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8941279740309160188}
   - component: {fileID: 8941279740309160191}
   - component: {fileID: 8919971256260977395}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TempPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
