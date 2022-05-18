@@ -57,17 +57,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playerHealth.TakeDamage(20);
-        }
-        else if (Input.GetKeyDown(KeyCode.F))
-        {
-            SceneManager.LoadScene("Win!");
-        }
 
-
-           
     }
 
     
