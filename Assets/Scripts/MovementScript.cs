@@ -113,4 +113,5 @@ public class MovementScript : MonoBehaviour
         sprinting = value.isPressed;
         Debug.Log($"Sprinting {sprinting}");
     }
+
 }

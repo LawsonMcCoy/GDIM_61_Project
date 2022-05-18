@@ -13,13 +13,14 @@ public class WinCondition : MonoBehaviour
 	private Camera Cam;
 	private Collider WinCollider;
 	private GameObject WinTerminal;
+
 	// Start is called before the first frame update
 	void Start()
     {
 		WinCollider = GetComponent<CapsuleCollider>();
 		Cam = Camera.main;
 		WinTerminal = GameObject.FindGameObjectWithTag(Wincondition);
-		Player = GameObject.Find("Player(Clone)");
+		Player = GameObject.Find("Terminal");
 	}
 
     // Update is called once per frame
@@ -29,11 +30,10 @@ public class WinCondition : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E))
         {
 			TryTerminal();
-
 		}
 		void TryTerminal()
         {
-			if (Mathf.Abs(Vector3.Distance(transform.position, Player.transform.position)) <= ActiveDistance)
+			if (Mathf.Abs(Vector3.Distance(transform.position, WinTerminal.transform.position)) <= ActiveDistance)
 			{
 				
 				Ray ray = Cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -41,8 +41,8 @@ public class WinCondition : MonoBehaviour
 
 				if (WinCollider.Raycast(ray, out hit, ActiveDistance))
 				{
-					SceneManager.LoadScene("Win!");
-					//EventManager.Instance.Notify(EventTypes.Events.GAME_VICTORY);
+
+					EventManager.Instance.Notify(EventTypes.Events.GAME_VICTORY);
 					//Debug.LogWarning(transform.position - Player.transform.position);
 
 				}
