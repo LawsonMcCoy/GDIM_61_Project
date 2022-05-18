@@ -155,6 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9637dde2b1e93ffa5907bde41de87f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveDistance: 5
+  playerTag: Player
+  Wincondition: WinCon
+  player: {fileID: 0}
   playerHealth: {fileID: 5118955853986194874}
 --- !u!54 &7081696405261643601
 Rigidbody:

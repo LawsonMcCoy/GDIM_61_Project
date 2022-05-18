@@ -19,9 +19,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        WinCollider = GetComponent<CapsuleCollider>();
         Cam = Camera.main;
         WinTerminal = GameObject.FindGameObjectWithTag(Wincondition);
+        WinCollider = WinTerminal.GetComponent<CapsuleCollider>();
     }
 
     private void OnInteract(InputValue value)
@@ -45,8 +45,9 @@ public class Player : MonoBehaviour
             {
 
                 EventManager.Instance.Notify(EventTypes.Events.GAME_VICTORY);
+                SceneManager.LoadScene("Win!");
                 //Debug.LogWarning(transform.position - Player.transform.position);
-                
+
             }
             Debug.LogWarning((transform.position - WinTerminal.transform.position).magnitude);
 
