@@ -216,7 +216,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5365193217127471655}
-  scanRadius: 7
+  enemy: {fileID: 323526850483515434}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  scanRadius: 15
   timeBetweenScans: 1
 --- !u!195 &5365193217127471655
 NavMeshAgent:

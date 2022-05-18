@@ -49,7 +49,14 @@ public abstract class Weapon : MonoBehaviour
 
     //A wrapper around the normal instantiate function
     //that will aid in setting up the weapon
-    // public Weapon Instantiate(Weapon weaponPrefab, Transform entityTransform, Vector3 holdingPosition)
+    public static Weapon Instantiate(Weapon weaponPrefab, Transform entityTransform, Vector3 holdingPosition, Transform parentTransform, LayerMask targets)
+    {
+        Weapon instance = Instantiate(weaponPrefab, entityTransform.position + holdingPosition, entityTransform.rotation, parentTransform);
+
+        instance.targets = targets;
+
+        return instance;
+    }
 
     //equipping the weapon in the game
     public void Equip()
@@ -78,7 +85,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (Time.time > timeOfCooldownExpiration)
         {
-            primaryAmmo.Fire(baseRange);
+            primaryAmmo.Fire(baseRange, transform, targets);
 
             //update cooldown time
             timeOfCooldownExpiration = Time.time + fireRate;
@@ -89,7 +96,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (hasSecondaryFire && Time.time > timeOfCooldownExpiration)
         {
-            secondaryAmmo.Fire(baseRange);
+            secondaryAmmo.Fire(baseRange, transform, targets);
 
             //update cooldown time
             timeOfCooldownExpiration = Time.time + fireRate;

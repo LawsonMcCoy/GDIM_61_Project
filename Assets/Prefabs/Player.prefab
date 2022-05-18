@@ -176,11 +176,10 @@ MonoBehaviour:
   targetsToDamage:
     serializedVersion: 2
     m_Bits: 64
-  healthManagerInspector: {fileID: 0}
   weaponPosition: {x: 0.5, y: 0.25, z: 0.5}
   startingWeapon: {fileID: 9202044761372768255, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
+  healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
-  playerHealth: {fileID: 5118955853986194874}
 --- !u!114 &4662663392129487170
 MonoBehaviour:
   m_ObjectHideFlags: 0

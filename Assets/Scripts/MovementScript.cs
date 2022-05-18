@@ -86,7 +86,6 @@ public class MovementScript : MonoBehaviour
 
     private void OnMovement(InputValue value)
     {
-        Debug.Log("Normal Movement");
         Vector2 movementIn2D = value.Get<Vector2>();
         //Note that when going from 2D vector to 3D vector, the y in 2D becomes the z in 3D, Thanks Unity
         PlayerMovementInput = new Vector3(movementIn2D.x, 0, movementIn2D.y);
@@ -112,6 +111,5 @@ public class MovementScript : MonoBehaviour
     private void OnSprint(InputValue value)
     {
         sprinting = value.isPressed;
-        Debug.Log($"Sprinting {sprinting}");
     }
 }

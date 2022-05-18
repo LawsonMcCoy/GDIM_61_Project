@@ -29,6 +29,8 @@ public class EnemyBehavior : BehaviorBase
         //get reference to the weapon
         equippedWeaponStats = enemy.equipped.GetWeaponStats();
 
+        enemy = this.gameObject.GetComponent<Entity>();
+
         //Construct behavior tree
         // behavior
     }
@@ -59,7 +61,7 @@ public class EnemyBehavior : BehaviorBase
     void ScanForTargets()
     {
         Collider[] targets; //array of targets found by the scan
-
+     
         targets = Physics.OverlapSphere(this.transform.position, scanRadius, playerLayer);
 
         //game is only single player right now, and probably forever
@@ -93,9 +95,12 @@ public class EnemyBehavior : BehaviorBase
     {
         //Is there line of sight?
         Vector3 vectorToPlayer = target.transform.position - this.transform.position;
-        if (Physics.Raycast(origin: this.transform.position, direction: vectorToPlayer, layerMask: playerLayer))
+        if (Physics.Raycast(this.transform.position, vectorToPlayer, equippedWeaponStats.range, layerMask: playerLayer))
         {
             //has line of sight on player
+
+            //stop the enemy
+            agent.SetDestination(this.transform.position);
 
             //look at player
             this.transform.LookAt(target.transform.position);
