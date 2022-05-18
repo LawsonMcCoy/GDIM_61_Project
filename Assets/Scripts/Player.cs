@@ -1,31 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
-{
-
-    
-    // Start is called before the first frame update
-    public PlayerHealth playerHealth;
-
-
-    private void Start()
+public class Player : Entity
+{    
+    private void OnPrimaryFire(InputValue value)
     {
-        
+        if (value.isPressed)
+        {
+            equipped.PrimaryFire();
+        }
     }
 
-    // Update is called once per frame
-    private void Update()
+    private void OnSecondaryFire(InputValue value)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (value.isPressed)
         {
-            playerHealth.TakeDamage(20);
-        }
-        else if (Input.GetKeyDown(KeyCode.F))
-        {
-            SceneManager.LoadScene("Win!");
+            equipped.SecondaryFire();
         }
     }
 

@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
         //Set first person camera
         GameObject camera = GameObject.FindWithTag(MAIN_CAMERA); //get reference to the camera's transform
-        camera.transform.SetParent(player.transform); //set the player as the parent so the camera follows them
+        camera.transform.SetParent(player.lookDirection.transform); //set the player as the parent so the camera follows them
         //set camera position and rotations in player space
         camera.transform.localPosition = cameraPositionInPlayerSpace;
         camera.transform.localRotation = cameraRotationInPlayerSpace;
