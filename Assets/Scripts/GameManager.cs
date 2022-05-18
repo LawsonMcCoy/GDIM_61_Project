@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour
 
     public GameOverScreen gameOver;
 
+    private scenes levelScene;
 
     private enum scenes
     {
         MAIN_MENU_SCENE,
         GAME_SCENE,
+        GAME_OVER,
+        VICTORY
     };
     scenes currentScene; //A variable to keep track of the current loaded scene
 
@@ -56,12 +59,18 @@ public class GameManager : MonoBehaviour
         //switch on the scenes for scene specific processing
         switch (currentScene)
         {
+            
             case scenes.MAIN_MENU_SCENE : //fill in code here later
                                           break;
 
             case scenes.GAME_SCENE : //spawn the player
+                                     levelScene = currentScene;
                                      spawnPlayer();
                                      break;
+            case scenes.GAME_OVER: break;
+
+            case scenes.VICTORY: break;
+
 
             default : Debug.LogError("Game Manager current scene is invalid");
                       break;
@@ -105,16 +114,30 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         EventManager.Instance.Subscribe(EventTypes.Events.PLAYER_DEATH, death);
+        EventManager.Instance.Subscribe(EventTypes.Events.RESTART, Restart);
+        EventManager.Instance.Subscribe(EventTypes.Events.GAME_VICTORY, win);
+
     }
 
-    //this is a temp. function to be deleted later
+   
     public void death()
     {
 
-        SceneManager.LoadScene("GameOVER");
+        LoadNewScene(scenes.GAME_OVER);
 
     }
 
+    public void Restart()
+    {
+        LoadNewScene(levelScene);
+    }
+
+    public void win()
+    {
+
+        LoadNewScene(scenes.VICTORY);
+
+    }
 
     private void OnDestroy()
     {

@@ -20,7 +20,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("PlayerMoveScene");
+        EventManager.Instance.Notify(EventTypes.Events.RESTART);
 
     }
 
