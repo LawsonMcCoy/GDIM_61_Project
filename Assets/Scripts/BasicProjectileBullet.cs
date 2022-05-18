@@ -30,16 +30,13 @@ public class BasicProjectileBullet : Bullet
             Debug.LogError("Don't forget to set the projectile's speed");
         }
 
-        Debug.Log($"Projectile created for {range/projectileSpeed} seconds");
-        Debug.Log($"range: {range}, speed: {projectileSpeed}");
-
         //distance divided by speed is time
         yield return new WaitForSeconds(range/projectileSpeed);
 
         Destroy(this.gameObject);
     }  
 
-    public override void Fire(float range)
+    public override void Fire(float range, Transform fireTransform, LayerMask targets)
     {
         BasicProjectileBullet projectile; //a reference to the projectile
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicHitscanBullet : Bullet
 {
-    public override void Fire(float range)
+    public override void Fire(float range, Transform fireTransform, LayerMask targets)
     {
         RaycastHit hitInfo; //A raycasthit object to return the information about the raycast
         if (Physics.Raycast(fireTransform.position, fireTransform.forward, hitInfo: out hitInfo, maxDistance: range, layerMask: targets))

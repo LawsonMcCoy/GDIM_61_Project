@@ -17,7 +17,7 @@ public abstract class Bullet : MonoBehaviour
         set;
     }  
 
-    public abstract void Fire(float range);
+    public abstract void Fire(float range, Transform fireTransform, LayerMask targets);
 
     public void SetTargets(LayerMask targetsLayerMask)
     {

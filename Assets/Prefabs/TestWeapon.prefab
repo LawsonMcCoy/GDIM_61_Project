@@ -49,7 +49,7 @@ MonoBehaviour:
   hasSecondaryFire: 1
   secondaryAmmo: {fileID: 3299306216194264654, guid: 3950b0acca190e1f48004abe8f3fb3d0, type: 3}
   baseDamage: 20
-  baseRange: 20
+  baseRange: 10
   fireRate: 0.5
   primaryFiringMode: 0
   secondaryFiringMode: 0
