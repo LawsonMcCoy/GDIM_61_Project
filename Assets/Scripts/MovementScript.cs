@@ -112,4 +112,5 @@ public class MovementScript : MonoBehaviour
     {
         sprinting = value.isPressed;
     }
+
 }

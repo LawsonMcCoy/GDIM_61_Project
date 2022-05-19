@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.Subscribe(EventTypes.Events.PLAYER_DEATH, death);
         EventManager.Instance.Subscribe(EventTypes.Events.RESTART, Restart);
         EventManager.Instance.Subscribe(EventTypes.Events.GAME_VICTORY, win);
-
     }
 
    
@@ -134,13 +133,13 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
-
         LoadNewScene(scenes.VICTORY);
-
     }
 
     private void OnDestroy()
     {
         EventManager.Instance.Unsubscribe(EventTypes.Events.PLAYER_DEATH, death);
+        EventManager.Instance.Unsubscribe(EventTypes.Events.RESTART, Restart);
+        EventManager.Instance.Unsubscribe(EventTypes.Events.GAME_VICTORY, win);
     }
 }

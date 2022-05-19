@@ -48,7 +48,7 @@ MonoBehaviour:
   primaryAmmo: {fileID: 7608968470117824626, guid: 9de0167266453e74bbec007a7d3975ba, type: 3}
   hasSecondaryFire: 1
   secondaryAmmo: {fileID: 3299306216194264654, guid: 3950b0acca190e1f48004abe8f3fb3d0, type: 3}
-  baseDamage: 5
+  baseDamage: 10
   baseRange: 30
   fireRate: 0.1
   primaryFiringMode: 0
