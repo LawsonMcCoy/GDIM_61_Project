@@ -24,7 +24,8 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         PauseUI.SetActive(false);
-        Time.timeScale = 1f;
+        EventManager.Instance.Notify(EventTypes.Events.GAME_UNPAUSE); //inform other script the game is unpaused
+        Time.timeScale = 1f; //reset the time scale
         gamePaused = false;
     }
 
@@ -32,14 +33,15 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         PauseUI.SetActive(true);
-        Time.timeScale = 0.01f;
+        EventManager.Instance.Notify(EventTypes.Events.GAME_PAUSE); //inform other scripts the game is paused
+        Time.timeScale = 0f; //set the time scale to zero to stop most game functions, including physics
         gamePaused = true;
     }
 
     public void ReturnMain()
     {
         Resume();
-        SceneManager.LoadScene(0);
+        GameManager.Instance.LoadNewScene(GameManager.scenes.MAIN_MENU_SCENE);
     }
 
     public void Update()

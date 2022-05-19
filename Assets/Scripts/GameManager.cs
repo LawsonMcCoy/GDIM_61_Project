@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     //the same as the build index for the corresponding scene
     //To recove this build index simple cast the emun into
     //an int
-    private enum scenes
+    public enum scenes
     {
         MAIN_MENU_SCENE,
         GAME_SCENE
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Quaternion cameraRotationInPlayerSpace;
 
     //GameManager is a singleton
-    public GameManager Instance
+    public static GameManager Instance
     {
         get;
         private set;
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void LoadNewScene(scenes sceneToLoad)
+    public void LoadNewScene(scenes sceneToLoad)
     {
         //keep track of the current scene
         currentScene = sceneToLoad;

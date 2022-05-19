@@ -36,6 +36,19 @@ public class MovementScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void OnEnable()
+    {
+        //lock cursor when script is enabled again
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void OnDisable()
+    {
+        //unlock cursor while script is disabled
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+
     private void Update()
     {
         MovePlayer();
