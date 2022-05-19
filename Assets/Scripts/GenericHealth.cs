@@ -32,7 +32,6 @@ abstract public class GenericHealth : MonoBehaviour
         {
             onDeath();
         }
-        Debug.Log($"current health {currentHealth}, damage {damage}");
     }
 
     private void Awake()
