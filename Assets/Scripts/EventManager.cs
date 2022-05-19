@@ -2,6 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//A note from Lawson
+//This script was pulled from my GDIM 161 project. It was originally written by Kevin Chao from
+//that group. Before using this script for this project I got Kevin's and everyone in this group 
+//expressed permission. 
 
 // Singleton
 public class EventManager : MonoBehaviour

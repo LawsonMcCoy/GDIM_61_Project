@@ -10,7 +10,6 @@ public class TestWeapon : Weapon
     {
         //This gun is just dealing base damage
 
-        Debug.Log("function is called");
         directHit[0].health.TakeDamage(baseDamage);
     }
 }

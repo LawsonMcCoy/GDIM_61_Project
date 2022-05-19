@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class will be used later
 public class ManagerCreator : MonoBehaviour
 {
     //The list of prefabs for the managers
