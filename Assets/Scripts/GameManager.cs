@@ -141,10 +141,16 @@ public class GameManager : MonoBehaviour
         LoadNewScene(scenes.VICTORY);
     }
 
+    public void playAgain()
+    {
+        LoadNewScene(scenes.MAIN_MENU_SCENE);
+    }
+
     private void OnDestroy()
     {
         EventManager.Instance.Unsubscribe(EventTypes.Events.PLAYER_DEATH, death);
         EventManager.Instance.Unsubscribe(EventTypes.Events.RESTART, Restart);
         EventManager.Instance.Unsubscribe(EventTypes.Events.GAME_VICTORY, win);
+        EventManager.Instance.Subscribe(EventTypes.Events.PLAY_AGAIN, playAgain);
     }
 }
