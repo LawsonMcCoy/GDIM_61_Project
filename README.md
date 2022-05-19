@@ -24,29 +24,28 @@ Description
 Control schemes
   Strike Team Penguin can be played using either keyboard and mouse or a controller. 
   
-  Keyboard and mouse
+  Keyboard and mouse <br />
+    -Move: WASD <br />
+    -Look: Mouse <br />
+    -Jump: Space <br />
+    -Belly Slide (Sprinting): Shift <br />
+    -Interact: E <br />
+    -Primary Fire: Left Click <br />
+    -Secondary Fire: Right Click <br />
   
-    -Move: WASD
-    -Look: Mouse
-    -Jump: Space
-    -Belly Slide (Sprinting): Shift
-    -Interact: E
-    -Primary Fire: Left Click
-    -Secondary Fire: Right Click
-  
-  Controller (controls given for Deulshook 4, but should be mappable to other controllers)
-    -Move: Left Stick
-    -Look: Right Stick
-    -Jump: X
-    -Belly Slide (Sprinting): L3
-    -Interact: Square
-    -Primary Fire: R2
-    -Secondary Fire: L2
+  Controller (controls given for Deulshook 4, but should be mappable to other controllers) <br />
+    -Move: Left Stick <br />
+    -Look: Right Stick <br />
+    -Jump: X <br />
+    -Belly Slide (Sprinting): L3 <br />
+    -Interact: Square <br />
+    -Primary Fire: R2 <br />
+    -Secondary Fire: L2 <br />
     
 Things we plan to implement
-  More weapons for both enemies and player
-  Weapons pickup, so the player can change their weapon
-  Special abilities for weapons
+  More weapons for both enemies and player <br />
+  Weapons pickup, so the player can change their weapon <br />
+  Special abilities for weapons <br />
 
 Known major bugs
 
