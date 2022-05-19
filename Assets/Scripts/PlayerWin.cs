@@ -14,6 +14,12 @@ public class PlayerWin : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void Quit()
     {
         Application.Quit();
