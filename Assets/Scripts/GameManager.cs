@@ -12,8 +12,9 @@ public class GameManager : MonoBehaviour
 
     private scenes levelScene;
 
-    private enum scenes
+    public enum scenes
     {
+        START,
         MAIN_MENU_SCENE,
         GAME_SCENE,
         GAME_OVER,
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Quaternion cameraRotationInPlayerSpace;
 
     //GameManager is a singleton
-    public GameManager Instance
+    public static GameManager Instance
     {
         get;
         private set;
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
         //switch on the scenes for scene specific processing
         switch (currentScene)
         {
-            
+            case scenes.START: break;
             case scenes.MAIN_MENU_SCENE : //fill in code here later
                                           break;
 
@@ -102,7 +103,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void LoadNewScene(scenes sceneToLoad)
+    public void LoadNewScene(scenes sceneToLoad)
     {
         //keep track of the current scene
         currentScene = sceneToLoad;
@@ -116,6 +117,9 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.Subscribe(EventTypes.Events.PLAYER_DEATH, death);
         EventManager.Instance.Subscribe(EventTypes.Events.RESTART, Restart);
         EventManager.Instance.Subscribe(EventTypes.Events.GAME_VICTORY, win);
+
+        //load the main menu scene
+        LoadNewScene(scenes.MAIN_MENU_SCENE);
     }
 
    
@@ -128,6 +132,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log($"loading the scene {levelScene}");
         LoadNewScene(levelScene);
     }
 

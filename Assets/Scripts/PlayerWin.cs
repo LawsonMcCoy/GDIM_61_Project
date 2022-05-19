@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerWin : MonoBehaviour
 {
@@ -13,11 +12,9 @@ public class PlayerWin : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    // Update is called once per frame
-
     public void returnToMenu()
     {
-        SceneManager.LoadScene(0);
+        GameManager.Instance.LoadNewScene(GameManager.scenes.MAIN_MENU_SCENE);
     }
 
     public void Quit()
