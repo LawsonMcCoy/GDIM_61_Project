@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: {fileID: 0}
   playerPrefab: {fileID: -1862207860930618491, guid: 6625566c63d913e49853d620203ef1f6, type: 3}
-  cameraPositionInPlayerSpace: {x: 0, y: 0, z: 0}
+  cameraPositionInPlayerSpace: {x: 0, y: 1, z: 0}
   cameraRotationInPlayerSpace: {x: 0, y: 0, z: 0, w: 0}
