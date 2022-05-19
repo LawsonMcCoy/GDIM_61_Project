@@ -32,7 +32,7 @@ Description <br />
     -Interact: E <br />
     -Primary Fire: Left Click <br />
     -Secondary Fire: Right Click <br />
-    -Pause: ESC <br \>
+    -Pause: ESC
   
   Controller (controls given for Deulshook 4, but should be mappable to other controllers) <br />
     -Move: Left Stick <br />
