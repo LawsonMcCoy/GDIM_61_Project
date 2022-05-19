@@ -55,10 +55,19 @@ public class MovementScript : MonoBehaviour
 
         RotatePlayer(rotationValue);
 
-        if (Velocity.y > TerminalVelocity)
+        if (!Controller.isGrounded)
         {
-            Velocity.y += Gravity * Time.deltaTime;
-        }        
+            //if not grounded then add gravity to vertical velocity every frame
+            if (Velocity.y > TerminalVelocity)
+            {
+                Velocity.y += Gravity * Time.deltaTime;
+            }      
+        }  
+        else
+        {
+            //if ground set vertical velocity to 0
+            Velocity.y = 0;
+        }
     }
 
     private void MovePlayer()
