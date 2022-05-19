@@ -32,6 +32,7 @@ Control schemes
     -Interact: E <br />
     -Primary Fire: Left Click <br />
     -Secondary Fire: Right Click <br />
+    -Pause: ESC <br \>
   
   Controller (controls given for Deulshook 4, but should be mappable to other controllers) <br />
     -Move: Left Stick <br />
@@ -48,6 +49,10 @@ Things we plan to implement
   Special abilities for weapons <br />
 
 Known major bugs
+  Walking up to a wall allows the player to look through the wall <br />
+  Walking up the first set of stairs can cause quite a bit of lag <br />
+  The player will ocassionally get stuck on a stair and you have to jump to get past the step <br \>
+  Currently cannot pause the game from the controller, you must use the keyboard <br \>
 
 
 Big questions you have.
