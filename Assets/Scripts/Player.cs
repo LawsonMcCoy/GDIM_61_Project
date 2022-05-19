@@ -14,6 +14,9 @@ public class Player : Entity
     // Start is called before the first frame update
     public PlayerHealth playerHealth;
 
+    [SerializeField] private PlayerInput input;
+    [SerializeField] private MovementScript movement;
+
 
     private void Start()
     {
@@ -30,10 +33,6 @@ public class Player : Entity
             TryTerminal();
         }
     }
-
-{    
-    [SerializeField] private PlayerInput input;
-    [SerializeField] private MovementScript movement;
 
     protected override void Awake()
     {
