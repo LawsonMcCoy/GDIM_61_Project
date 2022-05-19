@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public const string PLAYER_SPAWN_TAG = "Spawn Point";
     public const string MAIN_CAMERA = "MainCamera";
 
+    public GameOverScreen gameOver;
+
+    private scenes levelScene;
+
     //This is a enum to represent the scenes in the game
     //NOTE: the enum values must appear in the same order as
     //there corresponding scenes appear in the build setting 
@@ -16,10 +20,13 @@ public class GameManager : MonoBehaviour
     //the same as the build index for the corresponding scene
     //To recove this build index simple cast the emun into
     //an int
-    private enum scenes
+    public enum scenes
     {
+        START,
         MAIN_MENU_SCENE,
-        GAME_SCENE
+        GAME_SCENE,
+        GAME_OVER,
+        VICTORY
     };
     scenes currentScene; //A variable to keep track of the current loaded scene
 
@@ -31,7 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Quaternion cameraRotationInPlayerSpace;
 
     //GameManager is a singleton
-    public GameManager Instance
+    public static GameManager Instance
     {
         get;
         private set;
@@ -61,12 +68,18 @@ public class GameManager : MonoBehaviour
         //switch on the scenes for scene specific processing
         switch (currentScene)
         {
+            case scenes.START: break;
             case scenes.MAIN_MENU_SCENE : //fill in code here later
                                           break;
 
             case scenes.GAME_SCENE : //spawn the player
+                                     levelScene = currentScene;
                                      spawnPlayer();
                                      break;
+            case scenes.GAME_OVER: break;
+
+            case scenes.VICTORY: break;
+
 
             default : Debug.LogError("Game Manager current scene is invalid");
                       break;
@@ -78,7 +91,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Spawning player");
         //instantiate the player
         GameObject spawnPoint = GameObject.FindWithTag(PLAYER_SPAWN_TAG); //find spawn point in scene
-        Debug.Log($"Location {spawnPoint.transform.position}");
+        // Debug.Log($"Location {spawnPoint.transform.position}");
         if (spawnPoint == null)
         {
             //no spawn point
@@ -98,7 +111,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void LoadNewScene(scenes sceneToLoad)
+    public void LoadNewScene(scenes sceneToLoad)
     {
         //keep track of the current scene
         currentScene = sceneToLoad;
@@ -110,17 +123,42 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         EventManager.Instance.Subscribe(EventTypes.Events.PLAYER_DEATH, death);
+        EventManager.Instance.Subscribe(EventTypes.Events.RESTART, Restart);
+        EventManager.Instance.Subscribe(EventTypes.Events.GAME_VICTORY, win);
+
+        //load the main menu scene
+        LoadNewScene(scenes.MAIN_MENU_SCENE);
     }
 
-    //this is a temp. function to be deleted later
-    void death()
+   
+    public void death()
     {
-        Debug.Log("player dead");
+
+        LoadNewScene(scenes.GAME_OVER);
+
     }
 
+    public void Restart()
+    {
+        Debug.Log($"loading the scene {levelScene}");
+        LoadNewScene(levelScene);
+    }
+
+    public void win()
+    {
+        LoadNewScene(scenes.VICTORY);
+    }
+
+    public void playAgain()
+    {
+        LoadNewScene(scenes.MAIN_MENU_SCENE);
+    }
 
     private void OnDestroy()
     {
         EventManager.Instance.Unsubscribe(EventTypes.Events.PLAYER_DEATH, death);
+        EventManager.Instance.Unsubscribe(EventTypes.Events.RESTART, Restart);
+        EventManager.Instance.Unsubscribe(EventTypes.Events.GAME_VICTORY, win);
+        EventManager.Instance.Subscribe(EventTypes.Events.PLAY_AGAIN, playAgain);
     }
 }

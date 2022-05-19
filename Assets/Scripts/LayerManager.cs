@@ -19,6 +19,7 @@ public class LayerManager : MonoBehaviour
                                          //inspector is in the same order of layerNames
     [SerializeField] LayerMask playersLayer;
     [SerializeField] LayerMask enemyLayer;
+    [SerializeField] LayerMask winLayer;
 
     //By defualt the layer names will be the index
     //of the corresponding layer, ensure that layerNames
@@ -26,7 +27,8 @@ public class LayerManager : MonoBehaviour
     public enum layerNames
     {
         PLAYER,
-        ENEMY
+        ENEMY,
+        WIN
     }
 
     //This class is a singleton
@@ -85,6 +87,10 @@ public class LayerManager : MonoBehaviour
         LayerMask layerValue = playersLayer.value | enemyLayer.value;
 
         return layerValue;
+    }
+    public LayerMask GetWinConLayer()
+    {
+        return winLayer;
     }
     
 }

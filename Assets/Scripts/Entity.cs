@@ -32,7 +32,7 @@ public class Entity : MonoBehaviour
         protected set {lookAtRig = lookDirection;}
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         //Create starting weapon
         equipped = Weapon.Instantiate(startingWeapon, this.transform, weaponPosition, lookDirection.transform, targetsToDamage);

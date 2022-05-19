@@ -9,7 +9,8 @@ public class TestWeapon : Weapon
     public override void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indirectHit)
     {
         //This gun is just dealing base damage
-        Debug.Log(directHit[0].health);
+
+        Debug.Log("function is called");
         directHit[0].health.TakeDamage(baseDamage);
     }
 }

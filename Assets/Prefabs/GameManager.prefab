@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2b62662cd9c08f08af31b1154ff6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 8919971256260977395, guid: ca30cd26c1b946939ac6817b6c01c0d3, type: 3}
+  gameOver: {fileID: 0}
+  playerPrefab: {fileID: -1862207860930618491, guid: 6625566c63d913e49853d620203ef1f6, type: 3}
+  cameraPositionInPlayerSpace: {x: 0, y: 1, z: 0}
+  cameraRotationInPlayerSpace: {x: 0, y: 0, z: 0, w: 0}

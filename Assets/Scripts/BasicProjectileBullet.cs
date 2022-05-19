@@ -68,6 +68,7 @@ public class BasicProjectileBullet : Bullet
         if (LayerManager.Instance.ObjectInLayerMask(collidedWith.gameObject, targets))
         {
             //a target was hit
+            Debug.Log("Bullet hit");
 
             //Retrive the target, and put into array of size one for callback
             Entity[] targetHit = {collidedWith.GetComponent<Entity>()};

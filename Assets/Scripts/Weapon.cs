@@ -35,13 +35,13 @@ public abstract class Weapon : MonoBehaviour
     private void Start()
     {
         //Set up the bullets
-        primaryAmmo.OnHit += HitTargetCallback;
+        primaryAmmo.OnHit = HitTargetCallback;
         primaryAmmo.SetFireTransform(this.transform);
         primaryAmmo.SetTargets(targets);
 
         if (hasSecondaryFire)
         {
-            secondaryAmmo.OnHit += HitTargetCallback;
+            secondaryAmmo.OnHit = HitTargetCallback;
             secondaryAmmo.SetFireTransform(this.transform);
             secondaryAmmo.SetTargets(targets);
         } 

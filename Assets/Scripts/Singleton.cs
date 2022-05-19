@@ -11,7 +11,7 @@ public abstract class Singleton : MonoBehaviour
         private set;
     }
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         //set the Instance property 
         Instance = this;
@@ -19,5 +19,12 @@ public abstract class Singleton : MonoBehaviour
         //Don't destroy the Singleton when loading a new scene
         //enforces the singleton property
         DontDestroyOnLoad(this);
+    }
+
+    protected virtual void OnDestroy()
+    {
+        //If the game object is destroyed then the instance should
+        //be null
+        Instance = null;
     }
 }
