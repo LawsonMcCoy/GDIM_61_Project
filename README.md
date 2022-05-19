@@ -51,8 +51,8 @@ Things we plan to implement <br />
 ### Known major bugs
   Walking up to a wall allows the player to look through the wall <br />
   Walking up the first set of stairs can cause quite a bit of lag <br />
-  The player will ocassionally get stuck on a stair and you have to jump to get past the step <br \>
-  Currently cannot pause the game from the controller, you must use the keyboard <br \>
+  The player will ocassionally get stuck on a stair and you have to jump to get past the step <br />
+  Currently cannot pause the game from the controller, you must use the keyboard <br />
 
 
 ### Big questions you have.
