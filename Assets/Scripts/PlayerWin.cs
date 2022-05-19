@@ -17,7 +17,7 @@ public class PlayerWin : MonoBehaviour
 
     public void returnToMenu()
     {
-        SceneManager.LoadScene(0);
+        EventManager.Instance.Notify(EventTypes.Events.PLAY_AGAIN);
     }
 
     public void Quit()
