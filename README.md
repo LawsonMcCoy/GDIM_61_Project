@@ -23,7 +23,7 @@
    
 ## How To Play <br />
     Player walks around the map and shoots the enemies to kill them. 
-    Player can switch between 2 weapons: primary (projectile) and secondary (hit scan). 
+    Player can switch between 2 firing modes: primary (projectile) and secondary (hit scan). 
     The enemies are  white rectangles that will get aggravated if the player approaches them too close.
     The white rectangles will also continue following the player, as long as they are within the firing range.
     To win the game, the player needs to interact with a white cylinder placed inside a gazebo at the end of the map.
