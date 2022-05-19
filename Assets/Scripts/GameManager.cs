@@ -12,6 +12,14 @@ public class GameManager : MonoBehaviour
 
     private scenes levelScene;
 
+    //This is a enum to represent the scenes in the game
+    //NOTE: the enum values must appear in the same order as
+    //there corresponding scenes appear in the build setting 
+    //windows. If this order is maintained, then the default 
+    //int values for enum (0, 1, 2, ...) for each scene be 
+    //the same as the build index for the corresponding scene
+    //To recove this build index simple cast the emun into
+    //an int
     public enum scenes
     {
         START,
@@ -83,7 +91,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Spawning player");
         //instantiate the player
         GameObject spawnPoint = GameObject.FindWithTag(PLAYER_SPAWN_TAG); //find spawn point in scene
-        Debug.Log($"Location {spawnPoint.transform.position}");
+        // Debug.Log($"Location {spawnPoint.transform.position}");
         if (spawnPoint == null)
         {
             //no spawn point

@@ -168,6 +168,8 @@ MonoBehaviour:
   playerTag: Player
   Wincondition: WinCon
   playerHealth: {fileID: 5118955853986194874}
+  input: {fileID: 4662663392129487170}
+  movement: {fileID: 2256878145119773489}
 --- !u!114 &4662663392129487170
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,9 @@ public class EventTypes : MonoBehaviour
         PLAYER_DEATH,
         GAME_VICTORY,
         RESTART,
-        PLAY_AGAIN
+        PLAY_AGAIN,
+        GAME_PAUSE,
+        GAME_UNPAUSE
 
     };
 }
