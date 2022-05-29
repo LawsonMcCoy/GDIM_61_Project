@@ -160,8 +160,8 @@ MonoBehaviour:
   targetsToDamage:
     serializedVersion: 2
     m_Bits: 64
-  weaponPosition: {x: 0.5, y: 0.5, z: 1}
-  startingWeapon: {fileID: 8728897159839110761, guid: ed282f4256571a44d9747003ba763176, type: 3}
+  weaponPosition: {x: 0.56, y: 0.33, z: 0.45}
+  startingWeapon: {fileID: 7440843371467782236, guid: 84139ee246dbd8e40bb7a41cd1740c60, type: 3}
   healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
   ActiveDistance: 5
