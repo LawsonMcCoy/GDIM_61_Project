@@ -12,14 +12,15 @@ public class MovementScript : MonoBehaviour
     private Vector2 rotationValue;
     private bool sprinting;
 
-    [SerializeField] private CharacterController Controller;
-    [SerializeField] private Rigidbody playerRigidbody;
+    [SerializeField] private CharacterController Controller; //should be replaced with player.controller
+    [SerializeField] private Rigidbody playerRigidbody; //should be replaced with entity.rigidbody
+    [SerializeField] private Player player;
     [SerializeField] private float Speed;
     [SerializeField] private float SprintModifier;
     [SerializeField] private float JumpForce;
     [SerializeField] private float Gravity;
     [SerializeField] private float TerminalVelocity;
-    [SerializeField] private Transform PlayerCamera;
+    [SerializeField] private Transform PlayerCamera; //should be replaced with player.camera
     [SerializeField] private float Sensitivity;
     [SerializeField] private float MaxXRotation;
     [SerializeField] private float MinXRotation;
@@ -35,16 +36,38 @@ public class MovementScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void OnEnable()
+    {
+        //lock cursor when script is enabled again
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void OnDisable()
+    {
+        //unlock cursor while script is disabled
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+
     private void Update()
     {
         MovePlayer();
 
         RotatePlayer(rotationValue);
 
-        if (Velocity.y > TerminalVelocity)
+        if (!Controller.isGrounded)
         {
-            Velocity.y += Gravity * Time.deltaTime;
-        }        
+            //if not grounded then add gravity to vertical velocity every frame
+            if (Velocity.y > TerminalVelocity)
+            {
+                Velocity.y += Gravity * Time.deltaTime;
+            }      
+        }  
+        else
+        {
+            //if ground set vertical velocity to 0
+            Velocity.y = 0;
+        }
     }
 
     private void MovePlayer()
@@ -71,7 +94,7 @@ public class MovementScript : MonoBehaviour
         xRotation -= PlayerMouseInput.y * Sensitivity;
 
         transform.Rotate(0, PlayerMouseInput.x * Sensitivity, 0);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
+        player.lookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
     }
 
     private void RotatePlayer(Vector2 rotation)
@@ -80,12 +103,11 @@ public class MovementScript : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, MinXRotation, MaxXRotation);
 
         transform.Rotate(0, rotation.x * Sensitivity, 0);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0); 
+        player.lookDirection.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);    
     }
 
     private void OnMovement(InputValue value)
     {
-        Debug.Log("Normal Movement");
         Vector2 movementIn2D = value.Get<Vector2>();
         //Note that when going from 2D vector to 3D vector, the y in 2D becomes the z in 3D, Thanks Unity
         PlayerMovementInput = new Vector3(movementIn2D.x, 0, movementIn2D.y);
@@ -111,7 +133,6 @@ public class MovementScript : MonoBehaviour
     private void OnSprint(InputValue value)
     {
         sprinting = value.isPressed;
-        Debug.Log($"Sprinting {sprinting}");
     }
 
 }

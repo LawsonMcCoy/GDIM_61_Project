@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
+    [SerializeField] private Slider slider; //The health bar for the player
     public static HUD Instance
     {
         get;

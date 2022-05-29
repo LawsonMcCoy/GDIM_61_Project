@@ -6,7 +6,11 @@ public class EventTypes : MonoBehaviour
 {
     public enum Events { 
         PLAYER_DEATH,
-        GAME_VICTORY
+        GAME_VICTORY,
+        RESTART,
+        PLAY_AGAIN,
+        GAME_PAUSE,
+        GAME_UNPAUSE
 
     };
 }

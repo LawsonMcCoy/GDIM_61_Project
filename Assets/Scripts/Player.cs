@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
     public float ActiveDistance = 5.0f;
     public string playerTag = "Player";
     public string Wincondition = "WinCon";
-    public GameObject player;
     private Camera Cam;
     private Collider WinCollider;
     private GameObject WinTerminal;
     // Start is called before the first frame update
     public PlayerHealth playerHealth;
+
+    [SerializeField] private PlayerInput input;
+    [SerializeField] private MovementScript movement;
 
 
     private void Start()
@@ -31,8 +32,41 @@ public class Player : MonoBehaviour
             Debug.LogWarning("check for interact input");
             TryTerminal();
         }
-
     }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        // subscribes to pause and unpause events to disable and enable input
+        EventManager.Instance.Subscribe(EventTypes.Events.GAME_PAUSE, DisableInput);
+        EventManager.Instance.Subscribe(EventTypes.Events.GAME_UNPAUSE, EnableInput);
+    }
+
+    public void DisableInput()
+    {
+        input.enabled = false;
+
+        //also disable the player's movement
+        movement.enabled = false;
+    }
+
+    public void EnableInput()
+    {
+        input.enabled = true;
+
+        //also enable the player's movement
+        movement.enabled = true;
+    }
+
+    private void OnPrimaryFire(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            equipped.PrimaryFire();
+        }
+    }
+    
     void TryTerminal()
     {
         if (Mathf.Abs(Vector3.Distance(transform.position, WinTerminal.transform.position)) <= ActiveDistance)
@@ -43,21 +77,27 @@ public class Player : MonoBehaviour
 
             if (WinCollider.Raycast(ray, out hit, ActiveDistance))
             {
-
                 EventManager.Instance.Notify(EventTypes.Events.GAME_VICTORY);
-                SceneManager.LoadScene("Win!");
-                //Debug.LogWarning(transform.position - Player.transform.position);
-
             }
             Debug.LogWarning((transform.position - WinTerminal.transform.position).magnitude);
 
         }
 
     }
-    // Update is called once per frame
-    private void Update()
+
+    private void OnSecondaryFire(InputValue value)
     {
-    
+        if (value.isPressed)
+        {
+            equipped.SecondaryFire();
+        }           
+    }
+
+    private void OnDestroy()
+    {
+        //unsubscribe for events
+        EventManager.Instance.Unsubscribe(EventTypes.Events.GAME_PAUSE, DisableInput);
+        EventManager.Instance.Unsubscribe(EventTypes.Events.GAME_UNPAUSE, EnableInput);
     }
 
     
