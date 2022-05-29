@@ -176,9 +176,15 @@ MonoBehaviour:
   targetsToDamage:
     serializedVersion: 2
     m_Bits: 64
+<<<<<<< Updated upstream
   healthManagerInspector: {fileID: 0}
   weaponPosition: {x: 0.75, y: 0.5, z: 0.75}
   startingWeapon: {fileID: 7440843371467782236, guid: 84139ee246dbd8e40bb7a41cd1740c60, type: 3}
+=======
+  weaponPosition: {x: 0.5, y: 0.7, z: 0.5}
+  startingWeapon: {fileID: 8728897159839110761, guid: ed282f4256571a44d9747003ba763176, type: 3}
+  healthManagerInspector: {fileID: 5118955853986194874}
+>>>>>>> Stashed changes
   lookAtRig: {fileID: 5558648839089993385}
   playerHealth: {fileID: 5118955853986194874}
 --- !u!114 &4662663392129487170
