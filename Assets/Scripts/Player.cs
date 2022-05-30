@@ -13,9 +13,9 @@ public class Player : Entity
     private GameObject WinTerminal;
     // Start is called before the first frame update
     public PlayerHealth playerHealth;
-
     [SerializeField] private PlayerInput input;
     [SerializeField] private MovementScript movement;
+    [SerializeField] private InteractionManager InteractionManager;
 
 
     private void Start()
@@ -31,6 +31,7 @@ public class Player : Entity
         {
             Debug.LogWarning("check for interact input");
             TryTerminal();
+            TryInteract();
         }
     }
 
@@ -83,6 +84,11 @@ public class Player : Entity
 
         }
 
+    }
+
+    void TryInteract()
+    {
+        InteractionManager.Interact();
     }
 
     private void OnSecondaryFire(InputValue value)
