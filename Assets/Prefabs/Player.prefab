@@ -248,6 +248,9 @@ MonoBehaviour:
   _list: []
   InteractDistance: 0
   Cam: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &5986795572773326646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +266,9 @@ MonoBehaviour:
   _list: []
   InteractDistance: 0
   Cam: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &5558648839089993385
 GameObject:
   m_ObjectHideFlags: 0

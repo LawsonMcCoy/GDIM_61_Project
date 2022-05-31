@@ -31,7 +31,6 @@ public class Player : Entity
         {
             Debug.LogWarning("check for interact input");
             TryTerminal();
-            TryInteract();
         }
     }
 
@@ -86,10 +85,6 @@ public class Player : Entity
 
     }
 
-    void TryInteract()
-    {
-        InteractionManager.Interact();
-    }
 
     private void OnSecondaryFire(InputValue value)
     {
