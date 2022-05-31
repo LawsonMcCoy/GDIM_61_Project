@@ -49,6 +49,7 @@ MonoBehaviour:
   primaryAmmo: {fileID: 5082976984881131449, guid: 3cdc6b9280fbe7646b44f748ee2b9c1c, type: 3}
   hasSecondaryFire: 1
   secondaryAmmo: {fileID: 3299306216194264654, guid: 3950b0acca190e1f48004abe8f3fb3d0, type: 3}
+  audio: {fileID: 3255014483564891900}
   baseDamage: 50
   baseRange: 20
   fireRate: 2
