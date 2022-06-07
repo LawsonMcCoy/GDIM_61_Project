@@ -10,7 +10,13 @@
   Miguel Angel Jr. Aleman <br />
   
 ## Description <br />
-  _Strike Team Penguin_ is a first person shooter with an explorable and interactable (work in progress) environment. 
+Strike Team Penguins (STP) is a 3D FPS game where players control penguin Agent Gwen and fight against the corrupted robots that have overtaken the world. Their mission is to save humanity from the rule of Mr.Snuggles — the evilest and most vicious robot on the planet. The game’s pillars are exploration, story, aiming and shooting, and interactivity.
+  
+## Synopsis <br />
+The game is set in a world where AI is used to make life easier for humankind. However, one fatal experiment goes wrong and creates a vicious creature that is set to destroy all humanity — Mr. Snuggles. To defeat the powerful robot, humans have resorted to G.W.E.N.: genetically weaponized, enhanced nuggets. Mr. Snuggles' next target is the innocent civilians of a small town located in the midst of a mountain valley. Almost at the brink of extinction, humanity’s last hope lies in the flaps of Agent Gwen.
+
+Will Agent Gwen save the world or let humanity perish?
+
   
 ## Starting the game <br />
    Press "start" button on the main menu.
@@ -70,6 +76,4 @@
   - No visual feedback from hitscan bullets except damaging the enemy 
 
 
-## Big questions you have.
-1. Are there any areas in the map that can trespassed but are not supposed to be? (buildings, concrete walls, tress, etc.)
-   How do we fix that?
+
