@@ -8,6 +8,9 @@
   Aaron Luevano <br />
   Alexander Adam Rodriguez <br />
   Miguel Angel Jr. Aleman <br />
+
+## Disclamer <br />
+There is currently no mac build
   
 ## Description <br />
 Strike Team Penguins (STP) is a 3D FPS game where players control penguin Agent Gwen and fight against the corrupted robots that have overtaken the world. Their mission is to save humanity from the rule of Mr.Snuggles — the evilest and most vicious robot on the planet. The game’s pillars are exploration, story, aiming and shooting, and interactivity.
