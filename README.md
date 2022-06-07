@@ -31,12 +31,12 @@ Once the player’s health bar drops below zero, the player will die. This will 
 
    
 ## How To Play <br />
-   The player can walk around the map and shoot the enemies.
-The player can speedwalk (move faster).  
-The player can switch between 2 firing modes: primary projectile (mouse1/right trigger) and secondary hit scan (mouse2/left trigger). 
-The enemies are robots and will get aggravated if the player approaches them.
-The robots will continue following the player, as long as they are within the detection range, but out of firing range.
-The player needs to find 4 barrels and interact with a computer in order to win
+- The player can walk around the map and shoot the enemies.
+- The player can speedwalk (move faster).  
+- The player can switch between 2 firing modes: primary projectile (mouse1/right trigger) and secondary hit scan (mouse2/left trigger). 
+- The enemies are robots and will get aggravated if the player approaches them.
+- The robots will continue following the player, as long as they are within the detection range, but out of firing range.
+- The player needs to find 4 barrels and interact with a computer in order to win
 
 p.s.: refer to the supplementary document for more information on the barrel and computer placement.
 
