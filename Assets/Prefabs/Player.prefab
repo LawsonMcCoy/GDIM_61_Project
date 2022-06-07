@@ -139,7 +139,7 @@ MonoBehaviour:
   player: {fileID: -1862207860930618491}
   Speed: 5
   SprintModifier: 2
-  JumpForce: 3
+  JumpForce: 4
   Gravity: -9.81
   TerminalVelocity: -20
   PlayerCamera: {fileID: 0}
