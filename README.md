@@ -13,30 +13,33 @@
 Strike Team Penguins (STP) is a 3D FPS game where players control penguin Agent Gwen and fight against the corrupted robots that have overtaken the world. Their mission is to save humanity from the rule of Mr.Snuggles — the evilest and most vicious robot on the planet. The game’s pillars are exploration, story, aiming and shooting, and interactivity.
   
 ## Synopsis <br />
-The game is set in a world where AI is used to make life easier for humankind. However, one fatal experiment goes wrong and creates a vicious creature that is set to destroy all humanity — Mr. Snuggles. To defeat the powerful robot, humans have resorted to G.W.E.N.: genetically weaponized, enhanced nuggets. Mr. Snuggles' next target is the innocent civilians of a small town located in the midst of a mountain valley. Almost at the brink of extinction, humanity’s last hope lies in the flaps of Agent Gwen.
+The game is set in a world where AI is used to make life easier for humankind. However, one fatal experiment goes wrong and creates a threat to all humanity — Mr. Snuggles. To defeat the powerful robot, humans have resorted to G.W.E.N.: Genetically Weaponized, Enhanced Nugget. Mr. Snuggles' next target is the innocent civilians of a small town located in the midst of a mountain valley. Almost at the brink of extinction, humanity’s last hope lies in the flaps of Agent Gwen.
 
-Will Agent Gwen save the world or let humanity perish?
+Will Agent Gwen save the world or fall in a monumental battle?
+
 
   
 ## Starting the game <br />
    Press "start" button on the main menu.
     
 ## Win condition <br />
-  Player needs to reach the end of map where the gazebo is placed in a circular area. Player needs to approach the gazebo and find a white cylinder to interact with. Press _button E_ to win the game.
+  The player needs to find 4 barrels that are dispersed across the map. To collect the barrels, the player needs to use the interact button which will teleport the barrels to their stations. After collecting all four items, the player needs to find a computer placed in the center of a gazebo and interact with it.
+
     
 ## Death condition <br />
-   If the enemies shoot the player, then the health bard will decrease. Once health drops below zero, the player will die. This will trigger a game over screend to pop up on the screen. From this screen you can restart or quit the game.
+Once the player’s health bar drops below zero, the player will die. This will trigger a game over screen to pop up. From this screen, you can restart or quit the game.
+
    
 ## How To Play <br />
-    Player walks around the map and shoots the enemies to kill them. 
-    Player can switch between 2 firing modes: primary (projectile) and secondary (hit scan). 
-    The enemies are  white rectangles that will get aggravated if the player approaches them too close.
-    The white rectangles will also continue following the player, as long as they are within the firing range.
-    To win the game, the player needs to interact with a white cylinder placed inside a gazebo at the end of the map.
-    Player can reach it by walking out the house, and finding the big stairs to the left. Going up those stairs will lead to the fallen door.
-    At the end of that path, player will find the cylinder in a gazebo in the middle of a large open circular area of the map. 
-    
-    p.s.: If these instructions are not clear, just follow the trail of angry rectangles. Upon interacting with the cylinder, you will be presented with the win screen where you can return to main menu or quit the game. 
+   The player can walk around the map and shoot the enemies.
+The player can speedwalk (move faster).  
+The player can switch between 2 firing modes: primary projectile (mouse1/right trigger) and secondary hit scan (mouse2/left trigger). 
+The enemies are robots and will get aggravated if the player approaches them.
+The robots will continue following the player, as long as they are within the detection range, but out of firing range.
+The player needs to find 4 barrels and interact with a computer in order to win
+
+p.s.: refer to the supplementary document for more information on the barrel and computer placement.
+
 
 ## Control schemes
   Strike Team Penguin can be played using either keyboard, mouse, or controller. 
@@ -45,7 +48,7 @@ Will Agent Gwen save the world or let humanity perish?
     Move: WASD
     Look: Mouse
     Jump: Space
-    Belly Slide (Sprinting): Shift
+    Speedwalk (Sprinting): Shift
     Interact: E
     Primary Fire: Left Click
     Secondary Fire: Right Click 
@@ -68,7 +71,7 @@ Will Agent Gwen save the world or let humanity perish?
   
 
 ## Known major bugs
-  - PLayer can still look inside the buildings, walls, trees, etc.
+  - Players can still look inside the buildings, walls, trees, etc.
   - Walking up the first set of stairs can cause quite a bit of lag
   - The player will ocassionally get stuck on a stair and you have to jump to get past the step 
   - Currently cannot pause the game from the controller, you must use the keyboard 
