@@ -143,7 +143,7 @@ MonoBehaviour:
   Gravity: -9.81
   TerminalVelocity: -20
   PlayerCamera: {fileID: 0}
-  Sensitivity: 1
+  Sensitivity: 2
   MaxXRotation: 90
   MinXRotation: -90
 --- !u!114 &-1862207860930618491
@@ -161,16 +161,20 @@ MonoBehaviour:
   targetsToDamage:
     serializedVersion: 2
     m_Bits: 64
-  weaponPosition: {x: 0.5, y: 0.5, z: 1}
-  startingWeapon: {fileID: 8728897159839110761, guid: ed282f4256571a44d9747003ba763176, type: 3}
+  weaponPosition: {x: 0.56, y: 0.33, z: 0.59}
+  startingWeapon: {fileID: 9202044761372768255, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
   healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
-  ActiveDistance: 5
+  InteractDistance: 5
   playerTag: Player
   Wincondition: WinCon
+  EventSystemTag: EventSystem
   playerHealth: {fileID: 5118955853986194874}
   input: {fileID: 4662663392129487170}
   movement: {fileID: 2256878145119773489}
+  InteractableLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &4662663392129487170
 MonoBehaviour:
   m_ObjectHideFlags: 0
