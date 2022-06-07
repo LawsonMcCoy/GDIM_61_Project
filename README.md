@@ -98,8 +98,8 @@ Music:
   - Currently cannot pause the game from the controller, you must use the keyboard 
   - No visual feedback when damaging the enemy
 
-## Asset Credits
-
+## Credits
+Art
 - https://assetstore.unity.com/packages/3d/environments/sun-temple-115417  by Sandy T
 - https://assetstore.unity.com/packages/3d/environments/secret-radio-room-the-swamp-house-155339 by StoneSnail
 - https://assetstore.unity.com/packages/3d/props/weapons/firefireword-light-machine-gun-95750  by AP3X_Models
@@ -107,3 +107,10 @@ Music:
 - https://assetstore.unity.com/publishers/43520 by Agarkova_CG
 - https://assetstore.unity.com/publishers/4711 by  Sagital3D
 - https://assetstore.unity.com/packages/3d/environments/sci-fi/atm-95057 by CGY (Yemelyan K.)
+
+Music
+- https://www.bensound.com/royalty-free-music/track/birth-of-a-hero by Benjamin Tissot
+- https://www.bensound.com/royalty-free-music/track/instinct by Benjamin Tissot
+-
+Sound Effects
+- https://www.youtube.com/watch?v=gyR8VxHj-H4 by Shroud
