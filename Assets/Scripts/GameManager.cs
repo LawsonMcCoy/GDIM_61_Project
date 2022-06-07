@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public enum scenes
     {
         START,
+        INTRO,
         MAIN_MENU_SCENE,
         GAME_SCENE,
         GAME_OVER,
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
         switch (currentScene)
         {
             case scenes.START: break;
+            case scenes.INTRO: break;
             case scenes.MAIN_MENU_SCENE : //fill in code here later
                                           break;
 
@@ -126,8 +128,8 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.Subscribe(EventTypes.Events.RESTART, Restart);
         EventManager.Instance.Subscribe(EventTypes.Events.GAME_VICTORY, win);
 
-        //load the main menu scene
-        LoadNewScene(scenes.MAIN_MENU_SCENE);
+        //load the intro scene
+        LoadNewScene(scenes.INTRO);
     }
 
    
