@@ -96,7 +96,7 @@ Music:
   - Walking up the first set of stairs can cause quite a bit of lag
   - The player will ocassionally get stuck on a stair and you have to jump to get past the step 
   - Currently cannot pause the game from the controller, you must use the keyboard 
-  - No visual feedback when damaging the enemy
+  - Pause menu only works on initial runthrough. Whenever the game restarts, the pause menu does not work
 
 ## Credits
 Art
