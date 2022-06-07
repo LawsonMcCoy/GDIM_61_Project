@@ -7,6 +7,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Bullet primaryAmmo;
     [SerializeField] private bool hasSecondaryFire;
     [SerializeField] protected Bullet secondaryAmmo;
+    [SerializeField] private AudioSource audio;
 
     private LayerMask targets; //A layerMask for the targets the gun can shoot
 
@@ -85,6 +86,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (Time.time > timeOfCooldownExpiration)
         {
+            audio.Play();
             primaryAmmo.Fire(baseRange, transform, targets);
 
             //update cooldown time
