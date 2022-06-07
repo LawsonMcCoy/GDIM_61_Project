@@ -63,17 +63,16 @@ Will Agent Gwen save the world or let humanity perish?
 ## Things we plan to implement 
   - More weapons for both enemies and player 
   - Weapons pickup, so the player can change their weapon 
-  - Special abilities for weapons
-  - Implementing crosshair to improve aiming
+  - More special abilities for weapons
   - Animate gun kickback
   
 
 ## Known major bugs
-  - Walking up to a wall allows the player to look through the wall 
+  - PLayer can still look inside the buildings, walls, trees, etc.
   - Walking up the first set of stairs can cause quite a bit of lag
   - The player will ocassionally get stuck on a stair and you have to jump to get past the step 
   - Currently cannot pause the game from the controller, you must use the keyboard 
-  - No visual feedback from hitscan bullets except damaging the enemy 
+  - No visual feedback when damaging the enemy
 
 
 
