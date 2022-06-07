@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Our Game/Start.unity
     guid: 178bc1b349795cb97b59b3319bc8b00e
   - enabled: 1
+    path: Assets/Our Game/Intro.unity
+    guid: 30b7bd01d30cf6b45b5fdf66f558c513
+  - enabled: 1
     path: Assets/Our Game/Main Menu.unity
     guid: 09160c3f3444f42aebd9d44991d5e781
   - enabled: 1
