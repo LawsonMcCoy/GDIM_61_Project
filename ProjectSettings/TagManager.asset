@@ -8,6 +8,7 @@ TagManager:
   - PlayerMain
   - WinCon
   - Interactable
+  - EventSystem
   layers:
   - Default
   - TransparentFX

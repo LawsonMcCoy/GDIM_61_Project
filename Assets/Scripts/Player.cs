@@ -5,24 +5,29 @@ using UnityEngine.InputSystem;
 
 public class Player : Entity
 {
-    public float ActiveDistance = 5.0f;
+    public float InteractDistance = 5.0f;
     public string playerTag = "Player";
     public string Wincondition = "WinCon";
+    public string EventSystemTag = "EventSystem";
     private Camera Cam;
     private Collider WinCollider;
     private GameObject WinTerminal;
+    private GameObject Eventsystem;
+    InteractionManager interactionManager;
     // Start is called before the first frame update
     public PlayerHealth playerHealth;
     [SerializeField] private PlayerInput input;
     [SerializeField] private MovementScript movement;
-    [SerializeField] private InteractionManager InteractionManager;
+    [SerializeField] LayerMask InteractableLayer = 1 << 9;
 
 
     private void Start()
     {
         Cam = Camera.main;
         WinTerminal = GameObject.FindGameObjectWithTag(Wincondition);
+        Eventsystem = GameObject.FindGameObjectWithTag(EventSystemTag);
         WinCollider = WinTerminal.GetComponent<CapsuleCollider>();
+        interactionManager = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<InteractionManager>();
     }
 
     private void OnInteract(InputValue value)
@@ -30,7 +35,7 @@ public class Player : Entity
         if(value.isPressed)
         {
             Debug.LogWarning("check for interact input");
-            TryTerminal();
+            TryInteract();
         }
     }
 
@@ -67,22 +72,10 @@ public class Player : Entity
         }
     }
     
-    void TryTerminal()
+    void TryInteract()
     {
-        if (Mathf.Abs(Vector3.Distance(transform.position, WinTerminal.transform.position)) <= ActiveDistance)
-        {
-
-            Ray ray = Cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-            RaycastHit hit;
-
-            if (WinCollider.Raycast(ray, out hit, ActiveDistance))
-            {
-                EventManager.Instance.Notify(EventTypes.Events.GAME_VICTORY);
-            }
-            Debug.LogWarning((transform.position - WinTerminal.transform.position).magnitude);
-
-        }
-
+        interactionManager.CheckForInteractable();  
+       
     }
 
 

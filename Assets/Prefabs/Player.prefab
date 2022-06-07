@@ -18,8 +18,6 @@ GameObject:
   - component: {fileID: 4662663392129487170}
   - component: {fileID: 5118955853986194874}
   - component: {fileID: 7081696405261643601}
-  - component: {fileID: 5885261241526740014}
-  - component: {fileID: 5986795572773326646}
   m_Layer: 3
   m_Name: Player
   m_TagString: PlayerMain
@@ -144,7 +142,7 @@ MonoBehaviour:
   Gravity: -9.81
   TerminalVelocity: -20
   PlayerCamera: {fileID: 0}
-  Sensitivity: 1
+  Sensitivity: 2
   MaxXRotation: 90
   MinXRotation: -90
 --- !u!114 &-1862207860930618491
@@ -166,13 +164,16 @@ MonoBehaviour:
   startingWeapon: {fileID: 8728897159839110761, guid: ed282f4256571a44d9747003ba763176, type: 3}
   healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
-  ActiveDistance: 5
+  InteractDistance: 5
   playerTag: Player
   Wincondition: WinCon
+  EventSystemTag: EventSystem
   playerHealth: {fileID: 5118955853986194874}
   input: {fileID: 4662663392129487170}
   movement: {fileID: 2256878145119773489}
-  InteractionManager: {fileID: 5986795572773326646}
+  InteractableLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &4662663392129487170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,42 +234,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5885261241526740014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2256878145119773483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559489436d5a04648bbd422389584436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _list: []
-  InteractDistance: 0
-  Cam: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!114 &5986795572773326646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2256878145119773483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559489436d5a04648bbd422389584436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _list: []
-  InteractDistance: 0
-  Cam: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!1 &5558648839089993385
 GameObject:
   m_ObjectHideFlags: 0

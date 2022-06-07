@@ -103,8 +103,7 @@ namespace SunTemple
 			if (Mathf.Abs(Vector3.Distance(transform.position, Player.transform.position)) <= MaxDistance){	
 
 				Ray ray = Cam.ScreenPointToRay (new Vector3 (Screen.width / 2, Screen.height / 2, 0));
-				RaycastHit hit;
-											
+				RaycastHit hit;								
 				if (DoorCollider.Raycast(ray, out hit, MaxDistance)){					
 					if (IsLocked == false){
 						Activate ();
