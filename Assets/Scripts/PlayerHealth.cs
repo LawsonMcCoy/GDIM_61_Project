@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : GenericHealth
 {
     // Start is called before the first frame update
+    
+
     protected override void Start()
     {
         slider = HUD.Instance.getSlider();
+        DamageImage = HUD.Instance.getImage();
         base.Start();
         
     }
@@ -20,8 +24,5 @@ public class PlayerHealth : GenericHealth
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
