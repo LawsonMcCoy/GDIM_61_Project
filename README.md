@@ -58,7 +58,7 @@ p.s.: refer to the supplementary document for more information on the barrel and
     Move: Left Stick
     Look: Right Stick
     Jump: X
-    Belly Slide (Sprinting): L3 
+    Speedwalk (Sprinting): L3 
     Interact: Square
     Primary Fire: R2
     Secondary Fire: L2
