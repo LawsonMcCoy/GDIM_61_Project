@@ -64,12 +64,33 @@ p.s.: refer to the supplementary document for more information on the barrel and
     Secondary Fire: L2
     
 ## Things we plan to implement 
-  - More weapons for both enemies and player 
-  - Weapons pickup, so the player can change their weapon 
-  - More special abilities for weapons
-  - Animate gun kickback
-  
+Player:
+  - Add belly flop
+  - Add weapon pick up
+  - Add reload and weapon switch
 
+Weapons:
+  - More weapon selection for both enemies and player 
+  - Weapon pickup mechanic
+  - Animate gun kickback
+
+Enemy:
+  - Improve enemy AI behavior
+  - Add Inverse Kinematics
+  - Give Boss enemy a different behavior
+
+Level Design:
+- Improve barrel and enemy placement
+
+UI/UX:
+  - Add visual cue for enemy damage
+  - Improve Pause menu
+
+Music:
+  - Add more sound effects to weapons
+  - Add footsteps
+  - Change general music background 
+  
 ## Known major bugs
   - Players can still look inside the buildings, walls, trees, etc.
   - Walking up the first set of stairs can cause quite a bit of lag
@@ -77,5 +98,12 @@ p.s.: refer to the supplementary document for more information on the barrel and
   - Currently cannot pause the game from the controller, you must use the keyboard 
   - No visual feedback when damaging the enemy
 
+## Asset Credits
 
-
+- https://assetstore.unity.com/packages/3d/environments/sun-temple-115417  by Sandy T
+- https://assetstore.unity.com/packages/3d/environments/secret-radio-room-the-swamp-house-155339 by StoneSnail
+- https://assetstore.unity.com/packages/3d/props/weapons/firefireword-light-machine-gun-95750  by AP3X_Models
+- https://assetstore.unity.com/packages/3d/characters/robots/space-robot-kyle-4696 by Unity’s collection of assets
+- https://assetstore.unity.com/publishers/43520 by Agarkova_CG
+- https://assetstore.unity.com/publishers/4711 by  Sagital3D
+- https://assetstore.unity.com/packages/3d/environments/sci-fi/atm-95057 by CGY (Yemelyan K.)
