@@ -4,10 +4,19 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] protected Bullet primaryAmmo;
+    //The indices for the primary and secondary firing states
+    private const int PRIMARY_FIRE = 0;
+    private const int SECONDARY_FIRE = 1;
+
+    [Header("DO NOT modify the size of the arrays.")]
+    [Header("Note: First index of arrays are for primary fire, second index are secondary fire.")]
+
+    [SerializeField] protected Bullet[] ammo = new Bullet[2];
     [SerializeField] private bool hasSecondaryFire;
-    [SerializeField] protected Bullet secondaryAmmo;
-    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioSource[] audio = new AudioSource[2];
+
+    private bool[] triggerHeld = new bool[2]; //booleans to keep track of when one of the triggers
+                                              //is being held down (for automatic fire)
 
     private LayerMask targets; //A layerMask for the targets the gun can shoot
 
@@ -24,27 +33,32 @@ public abstract class Weapon : MonoBehaviour
         AUTOMATIC,
         SEMIAUTOMATIC
     };
-    [SerializeField] private FiringMode primaryFiringMode;
-    [SerializeField] private FiringMode secondaryFiringMode; 
+    [SerializeField] private FiringMode[] firingMode = new FiringMode[2];
     
     private void Awake()
     {
         //Start the weapon off cooldown
         timeOfCooldownExpiration = 0f;
+
+        for (int fireIndex = 0; fireIndex < 2; fireIndex++) //2 is for primary and secondary fire
+        {
+            //initialize triggers to not being held down
+            triggerHeld[fireIndex] = false;
+        }
     }
 
     private void Start()
     {
         //Set up the bullets
-        primaryAmmo.OnHit = HitTargetCallback;
-        primaryAmmo.SetFireTransform(this.transform);
-        primaryAmmo.SetTargets(targets);
+        ammo[PRIMARY_FIRE].OnHit = HitTargetCallback;
+        ammo[PRIMARY_FIRE].SetFireTransform(this.transform);
+        ammo[PRIMARY_FIRE].SetTargets(targets);
 
         if (hasSecondaryFire)
         {
-            secondaryAmmo.OnHit = HitTargetCallback;
-            secondaryAmmo.SetFireTransform(this.transform);
-            secondaryAmmo.SetTargets(targets);
+            ammo[SECONDARY_FIRE].OnHit = HitTargetCallback;
+            ammo[SECONDARY_FIRE].SetFireTransform(this.transform);
+            ammo[SECONDARY_FIRE].SetTargets(targets);
         } 
     }
 
@@ -57,6 +71,18 @@ public abstract class Weapon : MonoBehaviour
         instance.targets = targets;
 
         return instance;
+    }
+
+    private void Update()
+    {
+        for (int fireIndex = 0; fireIndex < 2; fireIndex++) //2 for primary and secondary
+        {
+            //if the trigger is being held down fire at the apporiate rate
+            if (triggerHeld[fireIndex] && Time.time > timeOfCooldownExpiration)
+            {
+                Fire(fireIndex);
+            }
+        }
     }
 
     //equipping the weapon in the game
@@ -82,27 +108,73 @@ public abstract class Weapon : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    //press primary trigger
     public virtual void PrimaryFire()
     {
-        if (Time.time > timeOfCooldownExpiration)
+        if (firingMode[PRIMARY_FIRE] == FiringMode.AUTOMATIC)
         {
-            audio.Play();
-            primaryAmmo.Fire(baseRange, transform, targets);
-
-            //update cooldown time
-            timeOfCooldownExpiration = Time.time + fireRate;
+            //If firing mode is automatic then fire the weapon in update until
+            //the trigger is released
+            triggerHeld[PRIMARY_FIRE] = true;
+        }
+        else //firingMode[PRIMARY_FIRE] = FiringMode.SEMIAUTOMATIC
+        {
+            //If firing mode is semi-automatic then fire the weapon once for each
+            //time the trigger is pushed
+            if (Time.time > timeOfCooldownExpiration)
+            {
+                Fire(PRIMARY_FIRE);
+            }   
         }
     }
 
+    //release primary trigger
+    public void PrimaryRelease()
+    {
+        Debug.Log("Release primary trigger");
+        triggerHeld[PRIMARY_FIRE] = false;
+    }
+
+    //press secondary trigger
     public virtual void SecondaryFire()
     {
-        if (hasSecondaryFire && Time.time > timeOfCooldownExpiration)
+        //only do something if the weapon has a secondary fire
+        if (hasSecondaryFire)
         {
-            secondaryAmmo.Fire(baseRange, transform, targets);
+            if (firingMode[SECONDARY_FIRE] == FiringMode.AUTOMATIC)
+            {
+                //If firing mode is automatic then fire the weapon in update until
+                //the trigger is released
+                triggerHeld[SECONDARY_FIRE] = true;
+            }
+            else //firingMode[SECONDARY_FIRE] = FiringMode.SEMIAUTOMATIC
+            {
+                //If firing mode is semi-automatic then fire the weapon once for each
+                //time the trigger is pushed
+                if (Time.time > timeOfCooldownExpiration)
+                {
+                    Fire(SECONDARY_FIRE);
+                }   
+            }//end else
+        }//end if (hasSecondaryFire)
+    }
+
+    //release secondary trigger
+    public void SecondaryRelease()
+    {
+        triggerHeld[SECONDARY_FIRE] = false;
+    }
+
+    private void Fire(int fireIndex)
+    {
+        if (Time.time > timeOfCooldownExpiration)
+        {
+            audio[fireIndex].Play();
+            ammo[fireIndex].Fire(baseRange, transform, targets);
 
             //update cooldown time
             timeOfCooldownExpiration = Time.time + fireRate;
-        }
+        }   
     }
 
     public abstract void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indierctHit);

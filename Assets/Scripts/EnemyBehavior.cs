@@ -38,6 +38,9 @@ public class EnemyBehavior : BehaviorBase
     //Later I will replace this with a behavior tree, for now we don't need that
     protected override void PerformBehavior()
     {
+        //start behavior by releasing trigger in case it was being held
+        enemy.equipped.PrimaryRelease();
+
         //check if time for scan
         timeSinceLastScan += Time.deltaTime;
         if (timeSinceLastScan >= timeBetweenScans)

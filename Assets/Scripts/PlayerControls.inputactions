@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "PrimaryFire",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "170a333b-bc44-4707-a437-bdc1d530eaab",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "SecondaryFire",
