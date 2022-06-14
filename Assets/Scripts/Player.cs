@@ -104,5 +104,10 @@ public class Player : Entity
         EventManager.Instance.Unsubscribe(EventTypes.Events.GAME_UNPAUSE, EnableInput);
     }
 
+    private void OnReload()
+    {
+        equipped.Reload();
+    }
+
     
 }

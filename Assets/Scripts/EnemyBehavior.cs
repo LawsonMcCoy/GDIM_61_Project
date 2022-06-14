@@ -111,6 +111,12 @@ public class EnemyBehavior : BehaviorBase
 
             //fire weapon
             enemy.equipped.PrimaryFire();
+
+            //if the magazine is empty reload the weapon
+            if (enemy.equipped.CheckMagazine() <= 0)
+            {
+                enemy.equipped.Reload();
+            }
         }
         else
         {

@@ -14,6 +14,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Bullet[] ammo = new Bullet[2];
     [SerializeField] private bool hasSecondaryFire;
     [SerializeField] private AudioSource[] audio = new AudioSource[2];
+    
 
     private bool[] triggerHeld = new bool[2]; //booleans to keep track of when one of the triggers
                                               //is being held down (for automatic fire)
@@ -24,6 +25,9 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected int baseDamage;
     [SerializeField] protected float baseRange;
     [SerializeField] protected float fireRate; //time between shots
+    [SerializeField] private int magazineSize = 10; //The total number of bullets the magazine can hold
+    private int numberOfLoadedBullets; //The number of bullets left in the magazine
+    [SerializeField] private float reloadTime; //The amount of the time it takes to reload the weapon
 
     private float timeOfCooldownExpiration; //The time the weapon will be ready to fire again
 
@@ -39,6 +43,9 @@ public abstract class Weapon : MonoBehaviour
     {
         //Start the weapon off cooldown
         timeOfCooldownExpiration = 0f;
+
+        //Start with a loaded magazine
+        numberOfLoadedBullets = magazineSize;
 
         for (int fireIndex = 0; fireIndex < 2; fireIndex++) //2 is for primary and secondary fire
         {
@@ -167,14 +174,36 @@ public abstract class Weapon : MonoBehaviour
 
     private void Fire(int fireIndex)
     {
-        if (Time.time > timeOfCooldownExpiration)
+        if (numberOfLoadedBullets > 0) //there are bullets loaded
         {
-            audio[fireIndex].Play();
-            ammo[fireIndex].Fire(baseRange, transform, targets);
+            //fire a bullet
+            if (Time.time > timeOfCooldownExpiration)
+            {
+                audio[fireIndex].Play();
+                ammo[fireIndex].Fire(baseRange, transform, targets);
 
-            //update cooldown time
-            timeOfCooldownExpiration = Time.time + fireRate;
-        }   
+                //update cooldown time
+                timeOfCooldownExpiration = Time.time + fireRate;
+
+                //decrement the number of bullets loaded, since one was just fired
+                numberOfLoadedBullets--;
+            }   
+        }
+    }
+
+    public void Reload()
+    {
+        //fill the magazine
+        numberOfLoadedBullets = magazineSize;
+
+        //add reload time to the cooldown
+        timeOfCooldownExpiration = Time.time + reloadTime;
+    }
+
+    //A small getter function for checking the number of bullets currently loaded in the magazine
+    public int CheckMagazine()
+    {
+        return numberOfLoadedBullets;
     }
 
     public abstract void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indierctHit);
