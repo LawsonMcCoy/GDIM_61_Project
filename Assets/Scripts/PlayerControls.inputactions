@@ -34,12 +34,12 @@
                 },
                 {
                     "name": "SecondaryFire",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "d2b80167-7346-4979-ba0d-ec9ff2d22ba4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Turning",

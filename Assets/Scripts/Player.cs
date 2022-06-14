@@ -66,14 +66,12 @@ public class Player : Entity
 
     private void OnPrimaryFire(InputValue value)
     {
-        Debug.Log("Primary Fire");
         if (value.isPressed)
         {
             equipped.PrimaryFire();
         }
         else
         {
-            Debug.Log("Release");
             equipped.PrimaryRelease();
         }
     }

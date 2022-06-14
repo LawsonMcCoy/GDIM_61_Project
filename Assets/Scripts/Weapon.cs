@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     //The indices for the primary and secondary firing states
     private const int PRIMARY_FIRE = 0;
@@ -14,12 +14,17 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Bullet[] ammo = new Bullet[2];
     [SerializeField] private bool hasSecondaryFire;
     [SerializeField] private AudioSource[] audio = new AudioSource[2];
+
+    //Weapon effects
+    [SerializeField] private List<WeaponEffect> directEffect; //effects applied to target that were hit directly
+    [SerializeField] private List<WeaponEffect> indirectEffect; //effects applied to targets hit with AOE
+    [SerializeField] private List<WeaponEffect> selfEffect; //effects applied to wielder if the weapon when target is hit
     
 
     private bool[] triggerHeld = new bool[2]; //booleans to keep track of when one of the triggers
                                               //is being held down (for automatic fire)
 
-    private LayerMask targets; //A layerMask for the targets the gun can shoot
+    private LayerMask targets; //A layerMask for the targetabstracts the gun can shoot
 
     //stats
     [SerializeField] protected int baseDamage;
@@ -138,7 +143,6 @@ public abstract class Weapon : MonoBehaviour
     //release primary trigger
     public void PrimaryRelease()
     {
-        Debug.Log("Release primary trigger");
         triggerHeld[PRIMARY_FIRE] = false;
     }
 
@@ -179,6 +183,7 @@ public abstract class Weapon : MonoBehaviour
             //fire a bullet
             if (Time.time > timeOfCooldownExpiration)
             {
+                Debug.Log($"Fire {fireIndex}");
                 audio[fireIndex].Play();
                 ammo[fireIndex].Fire(baseRange, transform, targets);
 
@@ -206,8 +211,29 @@ public abstract class Weapon : MonoBehaviour
         return numberOfLoadedBullets;
     }
 
-    public abstract void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indierctHit);
+    //The callback when the bullet hit a target
+    public void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indirectHit)
+    {
+        //Applies direct effects 
+        for (int hitIndex = 0; hitIndex < directHit.Length; hitIndex++)
+        {
+            for (int effectIndex = 0; effectIndex < directEffect.Count; effectIndex++)
+            {
+                directEffect[effectIndex].ApplyEffect(directHit[hitIndex]);
+            }
+        }
 
+        //Applies indirect effects 
+        for (int hitIndex = 0; hitIndex < indirectHit.Length; hitIndex++)
+        {
+            for (int effectIndex = 0; effectIndex < indirectEffect.Count; effectIndex++)
+            {
+                indirectEffect[effectIndex].ApplyEffect(indirectHit[hitIndex].targetHit);
+            }
+        }
+
+        //For later, implement code to apply self effect
+    }
     public void SetTargets(LayerMask targets)
     {
         this.targets = targets;
@@ -227,8 +253,8 @@ public abstract class Weapon : MonoBehaviour
 
 public struct IndirectHitInfo
 {
-    Entity targetHit; //The the target that was hit indirectly
-    float distanceFromHit; //The distance between the target and the actual hit point
+    public Entity targetHit; //The the target that was hit indirectly
+    public float distanceFromHit; //The distance between the target and the actual hit point
 }
 
 public struct WeaponStats

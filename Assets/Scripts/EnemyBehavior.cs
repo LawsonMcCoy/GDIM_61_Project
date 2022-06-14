@@ -100,7 +100,6 @@ public class EnemyBehavior : BehaviorBase
         Vector3 vectorToPlayer = target.transform.position - this.transform.position;
         if (Physics.Raycast(this.transform.position, vectorToPlayer, equippedWeaponStats.range, layerMask: playerLayer))
         {
-            Debug.Log("This is shooting");
             //has line of sight on player
 
             //stop the enemy
