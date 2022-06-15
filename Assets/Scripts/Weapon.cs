@@ -183,7 +183,6 @@ public class Weapon : MonoBehaviour
             //fire a bullet
             if (Time.time > timeOfCooldownExpiration)
             {
-                Debug.Log($"Fire {fireIndex}");
                 audio[fireIndex].Play();
                 ammo[fireIndex].Fire(baseRange, transform, targets);
 

@@ -74,7 +74,7 @@ public class BasicProjectileBullet : Bullet
             Entity[] targetHit = {collidedWith.GetComponent<Entity>()};
 
             //Callback so the weapon can decide what to do
-            OnHit(targetHit, null); //null since there is not AOE for indirect hit
+            OnHit(targetHit, new IndirectHitInfo[0]); //null since there is not AOE for indirect hit
         }
     }
 }
