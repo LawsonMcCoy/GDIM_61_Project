@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+
+public class ObjectDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject UI;
+
+    void OnTriggerEnter(Collider Obj)
     {
-        
+        if (Obj.gameObject.layer == 8)
+        {
+            UI.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit(Collider Obj)
     {
-        
+        if (Obj.gameObject.layer == 8)
+        {
+            {
+                UI.SetActive(false);
+            }
+        }
     }
 }
