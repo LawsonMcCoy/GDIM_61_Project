@@ -17,12 +17,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: baseRange
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: reloadTime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: ammo.Array.data[0]
+      value: 
+      objectReference: {fileID: 6232162764128255686, guid: e3ad6e2b2ab4a5e5e8c887590b4b387f, type: 3}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: directEffect.Array.data[0]
       value: 

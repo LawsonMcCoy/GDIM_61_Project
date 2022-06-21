@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: fireRate
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: baseRange
@@ -29,6 +29,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: ammo.Array.data[0]
+      value: 
+      objectReference: {fileID: 7608968470117824626, guid: 9de0167266453e74bbec007a7d3975ba, type: 3}
+    - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: ammo.Array.data[1]
       value: 
       objectReference: {fileID: 7608968470117824626, guid: 9de0167266453e74bbec007a7d3975ba, type: 3}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}

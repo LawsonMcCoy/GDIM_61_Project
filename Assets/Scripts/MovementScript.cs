@@ -135,4 +135,9 @@ public class MovementScript : MonoBehaviour
         sprinting = value.isPressed;
     }
 
+    public void SetSpeed(float newSpeed)
+    {
+        Speed = newSpeed;
+    }
+
 }

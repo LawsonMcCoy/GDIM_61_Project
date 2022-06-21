@@ -21,13 +21,33 @@ public class Player : Entity
     [SerializeField] LayerMask InteractableLayer = 1 << 9;
 
 
-    private void Start()
+    protected override void Start()
     {
         Cam = Camera.main;
         WinTerminal = GameObject.FindGameObjectWithTag(Wincondition);
         Eventsystem = GameObject.FindGameObjectWithTag(EventSystemTag);
         WinCollider = WinTerminal.GetComponent<CapsuleCollider>();
         interactionManager = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<InteractionManager>();
+
+        //call parent start
+        base.Start();
+    }
+
+    protected override void InitializeStats()
+    {
+        movement.SetSpeed(speed); //initialize speed
+    }
+
+    public override void ModifySpeed(float speedModifier, float timeModified=0.0f)
+    {
+        //update speed using the speedModifier
+        movement.SetSpeed(speed * speedModifier);
+
+        //if the modifier does not place the speed at the normal speed, set a expiration timer
+        if (speedModifier != 1.0f) //1.0 is 100% of the normal speed
+        {
+            StartCoroutine(StartSpeedResetTimer(timeModified));
+        }
     }
 
     private void OnInteract(InputValue value)
@@ -104,8 +124,10 @@ public class Player : Entity
 
     private void OnReload()
     {
+        Debug.Log("Player is reloading");
         equipped.Reload();
     }
+
 
     
 }

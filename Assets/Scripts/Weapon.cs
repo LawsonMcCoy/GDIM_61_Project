@@ -178,6 +178,7 @@ public class Weapon : MonoBehaviour
 
     private void Fire(int fireIndex)
     {
+        Debug.Log($"Firing weapon {fireIndex}");
         if (numberOfLoadedBullets > 0) //there are bullets loaded
         {
             //fire a bullet
@@ -213,21 +214,28 @@ public class Weapon : MonoBehaviour
     //The callback when the bullet hit a target
     public void HitTargetCallback(Entity[] directHit, IndirectHitInfo[] indirectHit)
     {
-        //Applies direct effects 
-        for (int hitIndex = 0; hitIndex < directHit.Length; hitIndex++)
+        //Applies direct effects
+        if (directHit != null)
         {
-            for (int effectIndex = 0; effectIndex < directEffect.Count; effectIndex++)
+            for (int hitIndex = 0; hitIndex < directHit.Length; hitIndex++)
             {
-                directEffect[effectIndex].ApplyEffect(directHit[hitIndex]);
+                for (int effectIndex = 0; effectIndex < directEffect.Count; effectIndex++)
+                {
+                    directEffect[effectIndex].ApplyEffect(directHit[hitIndex]);
+                }
             }
         }
 
         //Applies indirect effects 
-        for (int hitIndex = 0; hitIndex < indirectHit.Length; hitIndex++)
+        Debug.Log(indirectHit);
+        if (indirectHit != null)
         {
-            for (int effectIndex = 0; effectIndex < indirectEffect.Count; effectIndex++)
+            for (int hitIndex = 0; hitIndex < indirectHit.Length; hitIndex++)
             {
-                indirectEffect[effectIndex].ApplyEffect(indirectHit[hitIndex].targetHit);
+                for (int effectIndex = 0; effectIndex < indirectEffect.Count; effectIndex++)
+                {
+                    indirectEffect[effectIndex].ApplyEffect(indirectHit[hitIndex].targetHit);
+                }
             }
         }
 
@@ -245,6 +253,7 @@ public class Weapon : MonoBehaviour
         returnValue.damage = baseDamage;
         returnValue.range = baseRange;
         returnValue.rateOfFire = fireRate;
+        returnValue.magazineSize = magazineSize;
     
         return returnValue;
     }
@@ -261,4 +270,5 @@ public struct WeaponStats
     public int damage;
     public float range;
     public float rateOfFire;
+    public int magazineSize;
 }

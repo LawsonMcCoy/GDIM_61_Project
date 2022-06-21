@@ -53,12 +53,15 @@ MonoBehaviour:
   audio:
   - {fileID: 5551656584135768117}
   - {fileID: 5551656584135768117}
+  directEffect: []
+  indirectEffect: []
+  selfEffect: []
   baseDamage: 10
   baseRange: 15
   fireRate: 0.1
   magazineSize: 20
   reloadTime: 3
-  firingMode: 0100000000000000
+  firingMode: 0000000000000000
 --- !u!23 &6559856233688023222
 MeshRenderer:
   m_ObjectHideFlags: 0

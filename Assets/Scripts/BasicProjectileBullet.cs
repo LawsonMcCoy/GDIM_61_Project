@@ -64,11 +64,11 @@ public class BasicProjectileBullet : Bullet
 
     private void OnTriggerEnter(Collider collidedWith)
     {
+        Debug.Log($"hit {targets}");
         //Check the mask to make sure the collider is a target
         if (LayerManager.Instance.ObjectInLayerMask(collidedWith.gameObject, targets))
         {
             //a target was hit
-            Debug.Log("Bullet hit");
 
             //Retrive the target, and put into array of size one for callback
             Entity[] targetHit = {collidedWith.GetComponent<Entity>()};

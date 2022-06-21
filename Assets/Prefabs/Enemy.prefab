@@ -510,6 +510,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponPosition: {x: 0.5, y: 0, z: 0}
+  speed: 3.5
   startingWeapon: {fileID: 2457872775858801080, guid: f75bbc9b8e3f696e195ab0b5247c0f86, type: 3}
   healthManagerInspector: {fileID: -5685149931340682495}
   lookAtRig: {fileID: 8794627615199459334}
