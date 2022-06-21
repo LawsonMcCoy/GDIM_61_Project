@@ -334,6 +334,8 @@ GameObject:
   - component: {fileID: -5685149931340682495}
   - component: {fileID: 2552595548444038922}
   - component: {fileID: 323526850483515434}
+  - component: {fileID: 7346556500935316021}
+  - component: {fileID: 4220415066334820364}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -475,6 +477,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   slider: {fileID: 2554156231165106835}
+  DamageImage: {fileID: 0}
+  damageFlashSpeed: 3
+  damageFlashColor: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!54 &2552595548444038922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -510,6 +515,40 @@ MonoBehaviour:
   startingWeapon: {fileID: 9202044761372768255, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
   healthManagerInspector: {fileID: -5685149931340682495}
   lookAtRig: {fileID: 8794627615199459334}
+--- !u!95 &7346556500935316021
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875472579294264144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+  m_Controller: {fileID: 9100000, guid: ca9576f74bdc6414ab5ea5b11698bd3d, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4220415066334820364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875472579294264144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d03b2cb479799f44ac4727363783f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ikActive: 1
+  rightHandObj: {fileID: 4992287629839283609, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
+  lookObj: {fileID: 3266683835598072862}
 --- !u!1 &8794627615199459334
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +586,143 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7494187060387053269}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_WarningMessage
+      value: '
+
+        Transform ''Head'' has been deleted
+
+        Transform ''Neck''
+        has been deleted
+
+        Transform ''Left_Index_Finger_Joint_01c'' has been
+        deleted
+
+        Transform ''Left_Index_Finger_Joint_01b'' has been deleted
+
+        Transform
+        ''Left_Index_Finger_Joint_01a'' has been deleted
+
+        Transform ''Left_Middle_Finger_Joint_01c''
+        has been deleted
+
+        Transform ''Left_Middle_Finger_Joint_01b'' has
+        been deleted
+
+        Transform ''Left_Middle_Finger_Joint_01a'' has been
+        deleted
+
+        Transform ''Left_Ring_Finger_Joint_01c'' has been deleted
+
+        Transform
+        ''Left_Ring_Finger_Joint_01b'' has been deleted
+
+        Transform ''Left_Ring_Finger_Joint_01a''
+        has been deleted
+
+        Transform ''Left_Pinky_Finger_Joint_01c'' has been
+        deleted
+
+        Transform ''Left_Pinky_Finger_Joint_01b'' has been deleted
+
+        Transform
+        ''Left_Pinky_Finger_Joint_01a'' has been deleted
+
+        Transform ''Left_Thumb_Joint_01b''
+        has been deleted
+
+        Transform ''Left_Thumb_Joint_01a'' has been deleted
+
+        Transform
+        ''Left_Wrist_Joint_01'' has been deleted
+
+        Transform ''Left_Forearm_Joint_01''
+        has been deleted
+
+        Transform ''Left_Upper_Arm_Joint_01'' has been
+        deleted
+
+        Transform ''Left_Shoulder_Joint_01'' has been deleted
+
+        Transform
+        ''Right_Index_Finger_Joint_01c'' has been deleted
+
+        Transform ''Right_Index_Finger_Joint_01b''
+        has been deleted
+
+        Transform ''Right_Index_Finger_Joint_01a'' has
+        been deleted
+
+        Transform ''Right_Middle_Finger_Joint_01c'' has been
+        deleted
+
+        Transform ''Right_Middle_Finger_Joint_01b'' has been deleted
+
+        Transform
+        ''Right_Middle_Finger_Joint_01a'' has been deleted
+
+        Transform ''Right_Ring_Finger_Joint_01c''
+        has been deleted
+
+        Transform ''Right_Ring_Finger_Joint_01b'' has been
+        deleted
+
+        Transform ''Right_Ring_Finger_Joint_01a'' has been deleted
+
+        Transform
+        ''Right_Pinky_Finger_Joint_01c'' has been deleted
+
+        Transform ''Right_Pinky_Finger_Joint_01b''
+        has been deleted
+
+        Transform ''Right_Pinky_Finger_Joint_01a'' has
+        been deleted
+
+        Transform ''Right_Thumb_Joint_01b'' has been deleted
+
+        Transform
+        ''Right_Thumb_Joint_01a'' has been deleted
+
+        Transform ''Right_Wrist_Joint_01''
+        has been deleted
+
+        Transform ''Right_Forearm_Joint_01'' has been deleted
+
+        Transform
+        ''Right_Upper_Arm_Joint_01'' has been deleted
+
+        Transform ''Right_Shoulder_Joint_01''
+        has been deleted
+
+        Transform ''Ribs'' has been deleted
+
+        Transform
+        ''Left_Toe_Joint_01'' has been deleted
+
+        Transform ''Left_Ankle_Joint_01''
+        has been deleted
+
+        Transform ''Left_Knee_Joint_01'' has been deleted
+
+        Transform
+        ''Left_Thigh_Joint_01'' has been deleted
+
+        Transform ''Right_Toe_Joint_01''
+        has been deleted
+
+        Transform ''Right_Ankle_Joint_01'' has been deleted
+
+        Transform
+        ''Right_Knee_Joint_01'' has been deleted
+
+        Transform ''Right_Thigh_Joint_01''
+        has been deleted
+
+        Transform ''Hip'' has been deleted
+
+        Transform
+        ''Root'' has been deleted'
+      objectReference: {fileID: 0}
     - target: {fileID: -5716681864270162303, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_AnimatePhysics
       value: 1
