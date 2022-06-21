@@ -32,6 +32,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: firingMode.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: firingMode.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: directEffect.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 7330dcbc8016ad7b5918fe97ca573bd5, type: 2}
