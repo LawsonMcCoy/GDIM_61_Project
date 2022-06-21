@@ -437,7 +437,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  scanRadius: 15
+  scanRadius: 1
   timeBetweenScans: 1
 --- !u!195 &5365193217127471655
 NavMeshAgent:
@@ -475,6 +475,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   slider: {fileID: 2554156231165106835}
+  DamageImage: {fileID: 0}
+  damageFlashSpeed: 3
+  damageFlashColor: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!54 &2552595548444038922
 Rigidbody:
   m_ObjectHideFlags: 0

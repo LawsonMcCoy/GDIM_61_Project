@@ -10,7 +10,8 @@ public class EventTypes : MonoBehaviour
         RESTART,
         PLAY_AGAIN,
         GAME_PAUSE,
-        GAME_UNPAUSE
+        GAME_UNPAUSE,
+        SPAWN_BOSS
 
     };
 }
