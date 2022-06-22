@@ -7,10 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2264216085864532799, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 13397d414f7261d4fa26f007649db9b6, type: 2}
     - target: {fileID: 864894329122252791, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_Name
       value: SNIPER
       objectReference: {fileID: 0}
+    - target: {fileID: 1424503439752930300, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: e7fb389dc3db45f41897ccc091889864, type: 3}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: fireRate
       value: 2

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RAPIDFIRE
       objectReference: {fileID: 0}
+    - target: {fileID: 1424503439752930300, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: 6ec4e98e91c69f144b1f8242b1a0e7d3, type: 3}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: fireRate
       value: 0.3
