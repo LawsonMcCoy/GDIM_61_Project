@@ -162,7 +162,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   weaponPosition: {x: 0.56, y: 0.33, z: 0.59}
-  startingWeapon: {fileID: 9202044761372768255, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
+  speed: 5
+  startingWeapon: {fileID: 2457872775858801080, guid: f75bbc9b8e3f696e195ab0b5247c0f86, type: 3}
   healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
   InteractDistance: 5
@@ -219,6 +220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   slider: {fileID: 0}
+  DamageImage: {fileID: 0}
+  damageFlashSpeed: 3
+  damageFlashColor: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!54 &7081696405261643601
 Rigidbody:
   m_ObjectHideFlags: 0

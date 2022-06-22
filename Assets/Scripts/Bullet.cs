@@ -19,7 +19,7 @@ public abstract class Bullet : MonoBehaviour
 
     public abstract void Fire(float range, Transform fireTransform, LayerMask targets);
 
-    public void SetTargets(LayerMask targetsLayerMask)
+    public virtual void SetTargets(LayerMask targetsLayerMask)
     {
         targets = targetsLayerMask;
     }

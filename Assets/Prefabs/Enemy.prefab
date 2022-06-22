@@ -475,6 +475,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   slider: {fileID: 2554156231165106835}
+  DamageImage: {fileID: 0}
+  damageFlashSpeed: 3
+  damageFlashColor: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!54 &2552595548444038922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -507,7 +510,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponPosition: {x: 0.5, y: 0, z: 0}
-  startingWeapon: {fileID: 9202044761372768255, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
+  speed: 3.5
+  startingWeapon: {fileID: 2457872775858801080, guid: f75bbc9b8e3f696e195ab0b5247c0f86, type: 3}
   healthManagerInspector: {fileID: -5685149931340682495}
   lookAtRig: {fileID: 8794627615199459334}
 --- !u!1 &8794627615199459334
