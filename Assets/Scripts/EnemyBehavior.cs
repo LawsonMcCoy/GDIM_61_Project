@@ -38,6 +38,9 @@ public class EnemyBehavior : BehaviorBase
     //Later I will replace this with a behavior tree, for now we don't need that
     protected override void PerformBehavior()
     {
+        //start behavior by releasing trigger in case it was being held
+        enemy.equipped.PrimaryRelease();
+
         //check if time for scan
         timeSinceLastScan += Time.deltaTime;
         if (timeSinceLastScan >= timeBetweenScans)
@@ -97,7 +100,6 @@ public class EnemyBehavior : BehaviorBase
         Vector3 vectorToPlayer = target.transform.position - this.transform.position;
         if (Physics.Raycast(this.transform.position, vectorToPlayer, equippedWeaponStats.range, layerMask: playerLayer))
         {
-            Debug.Log("This is shooting");
             //has line of sight on player
 
             //stop the enemy
@@ -108,6 +110,12 @@ public class EnemyBehavior : BehaviorBase
 
             //fire weapon
             enemy.equipped.PrimaryFire();
+
+            //if the magazine is empty reload the weapon
+            if (enemy.equipped.CheckMagazine() <= 0)
+            {
+                enemy.equipped.Reload();
+            }
         }
         else
         {

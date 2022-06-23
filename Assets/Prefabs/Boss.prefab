@@ -81,9 +81,13 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 323526850483515434, guid: 8ecac5e2b5d1522dcba667dff89a1dcd, type: 3}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 323526850483515434, guid: 8ecac5e2b5d1522dcba667dff89a1dcd, type: 3}
       propertyPath: startingWeapon
       value: 
-      objectReference: {fileID: 7440843371467782236, guid: 84139ee246dbd8e40bb7a41cd1740c60, type: 3}
+      objectReference: {fileID: 5103739952675927239, guid: a23abfbe5518883d3ba24c2016b232b1, type: 3}
     - target: {fileID: 323526850483515434, guid: 8ecac5e2b5d1522dcba667dff89a1dcd, type: 3}
       propertyPath: weaponPosition.x
       value: 1.5

@@ -700,7 +700,7 @@ MonoBehaviour:
   player: {fileID: -1862207860930618491}
   Speed: 5
   SprintModifier: 2
-  JumpForce: 3
+  JumpForce: 4
   Gravity: -9.81
   TerminalVelocity: -20
   PlayerCamera: {fileID: 0}
@@ -723,7 +723,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   weaponPosition: {x: 0.56, y: 0.33, z: 0.59}
-  startingWeapon: {fileID: 9202044761372768255, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
+  speed: 5
+  startingWeapon: {fileID: 2457872775858801080, guid: f75bbc9b8e3f696e195ab0b5247c0f86, type: 3}
   healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
   InteractDistance: 5
@@ -1974,6 +1975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 364243cf5786cbb2099c9e69bb58e401, type: 3}
+--- !u!224 &3219380490236984431 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 211845319879468362, guid: 364243cf5786cbb2099c9e69bb58e401, type: 3}
+  m_PrefabInstance: {fileID: 3340871911882840357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3219380490396309067 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 211845319720062830, guid: 364243cf5786cbb2099c9e69bb58e401, type: 3}
@@ -1982,11 +1988,6 @@ RectTransform:
 --- !u!1 &3219380490396309078 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 211845319720062835, guid: 364243cf5786cbb2099c9e69bb58e401, type: 3}
-  m_PrefabInstance: {fileID: 3340871911882840357}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3219380490236984431 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 211845319879468362, guid: 364243cf5786cbb2099c9e69bb58e401, type: 3}
   m_PrefabInstance: {fileID: 3340871911882840357}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &6962919286998981470

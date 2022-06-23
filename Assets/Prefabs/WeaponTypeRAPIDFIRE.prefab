@@ -46,15 +46,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f0274b7d7cb96f3851f4b75ac38899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryAmmo: {fileID: 7608968470117824626, guid: 9de0167266453e74bbec007a7d3975ba, type: 3}
-  hasSecondaryFire: 1
-  secondaryAmmo: {fileID: 3299306216194264654, guid: 3950b0acca190e1f48004abe8f3fb3d0, type: 3}
-  audio: {fileID: 5551656584135768117}
+  ammo:
+  - {fileID: 7608968470117824626, guid: 9de0167266453e74bbec007a7d3975ba, type: 3}
+  - {fileID: 0}
+  hasSecondaryFire: 0
+  audio:
+  - {fileID: 5551656584135768117}
+  - {fileID: 5551656584135768117}
+  directEffect: []
+  indirectEffect: []
+  selfEffect: []
   baseDamage: 10
   baseRange: 15
   fireRate: 0.1
-  primaryFiringMode: 0
-  secondaryFiringMode: 0
+  magazineSize: 20
+  reloadTime: 3
+  firingMode: 0000000000000000
 --- !u!23 &6559856233688023222
 MeshRenderer:
   m_ObjectHideFlags: 0
