@@ -326,14 +326,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7494187060387053269}
-  - component: {fileID: 1730205300664293286}
-  - component: {fileID: 2585495869048262708}
   - component: {fileID: 6175975943638597265}
   - component: {fileID: 727246925274079103}
   - component: {fileID: 5365193217127471655}
   - component: {fileID: -5685149931340682495}
   - component: {fileID: 2552595548444038922}
-  - component: {fileID: 323526850483515434}
+  - component: {fileID: 617490029572606768}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -358,55 +356,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1730205300664293286
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3875472579294264144}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2585495869048262708
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3875472579294264144}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6175975943638597265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -433,11 +382,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5365193217127471655}
-  enemy: {fileID: 323526850483515434}
+  enemy: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  scanRadius: 15
+  scanRadius: 25
   timeBetweenScans: 1
 --- !u!195 &5365193217127471655
 NavMeshAgent:
@@ -475,6 +424,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   slider: {fileID: 2554156231165106835}
+  DamageImage: {fileID: 0}
+  damageFlashSpeed: 0
+  damageFlashColor: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!54 &2552595548444038922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -491,7 +443,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &323526850483515434
+--- !u!114 &617490029572606768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,7 +459,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponPosition: {x: 0.5, y: 0, z: 0}
-  startingWeapon: {fileID: 9202044761372768255, guid: 689a26a31e700a76c988b2a7ff85b604, type: 3}
+  startingWeapon: {fileID: 8728897159839110761, guid: ed282f4256571a44d9747003ba763176, type: 3}
   healthManagerInspector: {fileID: -5685149931340682495}
   lookAtRig: {fileID: 8794627615199459334}
 --- !u!1 &8794627615199459334

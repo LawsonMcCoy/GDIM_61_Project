@@ -6,6 +6,7 @@ using UnityEngine.UI;
 abstract public class GenericHealth : MonoBehaviour
 
 {
+
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
 
@@ -30,10 +31,10 @@ abstract public class GenericHealth : MonoBehaviour
         slider.value = health;
     }
 
-    public void TakeDamage(int damage)
+    virtual public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-       
+
         this.setHealth(currentHealth);
 
         damaged = true;
@@ -44,9 +45,9 @@ abstract public class GenericHealth : MonoBehaviour
         }
 
         
-
-        
     }
+
+
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ abstract public class GenericHealth : MonoBehaviour
     virtual protected void Start()
     {
         setMaxHealth(currentHealth);
+       
     }
 
     abstract protected void onDeath();
@@ -68,6 +70,7 @@ abstract public class GenericHealth : MonoBehaviour
 
     public void DamageFlash()
     {
+        
         if (gameObject.tag == "PlayerMain")
         {
             if (!damaged)
@@ -83,9 +86,10 @@ abstract public class GenericHealth : MonoBehaviour
 
             damaged = false;
         }
+
         
     }
-  
+
 
     
 }

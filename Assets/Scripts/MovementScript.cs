@@ -12,6 +12,8 @@ public class MovementScript : MonoBehaviour
     private Vector2 rotationValue;
     private bool sprinting;
 
+    AudioSource audioSrc;
+
     [SerializeField] private CharacterController Controller; //should be replaced with player.controller
     [SerializeField] private Rigidbody playerRigidbody; //should be replaced with entity.rigidbody
     [SerializeField] private Player player;
@@ -24,6 +26,7 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private float Sensitivity;
     [SerializeField] private float MaxXRotation;
     [SerializeField] private float MinXRotation;
+    
 
 
     private void Awake()
@@ -34,6 +37,7 @@ public class MovementScript : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -68,6 +72,18 @@ public class MovementScript : MonoBehaviour
             //if ground set vertical velocity to 0
             Velocity.y = 0;
         }
+
+        if (Controller.velocity.Equals(Vector3.zero))
+        {
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+            }
+            else
+            {
+                audioSrc.Stop();
+            }
+        }
     }
 
     private void MovePlayer()
@@ -81,6 +97,9 @@ public class MovementScript : MonoBehaviour
         }
 
         Controller.Move((MoveVector * Time.deltaTime * Speed) + (Velocity * Time.deltaTime));
+
+        //this needs to be fixed
+        
     }
 
     private void OnTurning(InputValue value)
@@ -111,6 +130,7 @@ public class MovementScript : MonoBehaviour
         Vector2 movementIn2D = value.Get<Vector2>();
         //Note that when going from 2D vector to 3D vector, the y in 2D becomes the z in 3D, Thanks Unity
         PlayerMovementInput = new Vector3(movementIn2D.x, 0, movementIn2D.y);
+
     } 
 
     private void OnJump(InputValue value)
