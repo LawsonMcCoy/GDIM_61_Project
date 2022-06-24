@@ -724,7 +724,7 @@ MonoBehaviour:
     m_Bits: 64
   weaponPosition: {x: 0.56, y: 0.56, z: 0.59}
   speed: 5
-  startingWeapon: {fileID: 4842364524231039050, guid: ca3a5fb915a9c3d8a84a3a2a6c515259, type: 3}
+  startingWeapon: {fileID: 9040553203588641355, guid: 40f298daaa84b33f1a39bed16327d515, type: 3}
   healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
   InteractDistance: 5
