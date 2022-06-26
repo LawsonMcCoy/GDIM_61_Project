@@ -7,10 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1462051862901042274, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 864894329122252791, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_Name
       value: RAPIDFIRE
       objectReference: {fileID: 0}
+    - target: {fileID: 1167017196442476925, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e80ab32a28ea4064d97325cc2fd0c0f7, type: 3}
     - target: {fileID: 1424503439752930300, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -43,6 +51,10 @@ PrefabInstance:
       propertyPath: directEffect.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 10de1a0223133ceb8baadd838b78cf85, type: 2}
+    - target: {fileID: 4256962900231421176, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8199642896850837221, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_RootOrder
       value: 0

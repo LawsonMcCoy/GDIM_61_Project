@@ -7,6 +7,8 @@ public class ObjInteraction : MonoBehaviour
     // Start is called before the first frame update
     public GameObject UI;
 
+    //[SerializeField] private AudioSource interactAudio;
+
     public GameObject UICross;
 
     void OnTriggerEnter(Collider Obj)
@@ -28,5 +30,6 @@ public class ObjInteraction : MonoBehaviour
                 UICross.SetActive(true);
             }
         }
+        //interactAudio.Play();
     }
 }

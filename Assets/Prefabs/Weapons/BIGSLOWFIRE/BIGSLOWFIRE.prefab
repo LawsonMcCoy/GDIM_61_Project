@@ -15,10 +15,18 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 905bff4ab89dfc14a9892ad04ce7f396, type: 3}
+    - target: {fileID: -1462051862901042274, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 864894329122252791, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_Name
       value: BIGSLOWFIRE
       objectReference: {fileID: 0}
+    - target: {fileID: 1167017196442476925, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5220cfff0d365ac4ca25fc7d6d3e7141, type: 3}
     - target: {fileID: 1424503439752930300, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -33,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: reloadTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: ammo.Array.data[0]
@@ -43,6 +51,10 @@ PrefabInstance:
       propertyPath: directEffect.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: b3fdf9fee293ca27ea5202b0c5e9fe75, type: 2}
+    - target: {fileID: 4256962900231421176, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8199642896850837221, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_RootOrder
       value: 0

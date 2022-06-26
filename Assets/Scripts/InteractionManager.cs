@@ -26,6 +26,8 @@ public class InteractionManager : MonoBehaviour
     private bool TriCheck;
 
 
+    [SerializeField] private AudioSource interactAudio;
+
     [SerializeField]
     LayerMask InteractableLayer = 1 << 8;
     [SerializeField]
@@ -58,6 +60,7 @@ public class InteractionManager : MonoBehaviour
             Debug.Log("interact With Wide");
             InteractablesList[0].transform.position = InteractablesList[4].transform.position;
             WideCheck = true;
+            interactAudio.Play();
         }
 
         if (BarrelStandardCollider.Raycast(ray, out hit, InteractDistance))
@@ -65,18 +68,21 @@ public class InteractionManager : MonoBehaviour
             Debug.Log("interact With Standard");
             InteractablesList[1].transform.position = InteractablesList[5].transform.position;
             StandardCheck = true;
+            interactAudio.Play();
         }
         if (BarrelBoxCollider.Raycast(ray, out hit, InteractDistance))
         {
             Debug.Log("interact With Box");
             InteractablesList[2].transform.position = InteractablesList[6].transform.position;
             BoxCheck = true;
+            interactAudio.Play();
         }
         if (BarrelTriCollider.Raycast(ray, out hit, InteractDistance))
         {
             Debug.Log("interact With Tri");
             InteractablesList[3].transform.position = InteractablesList[7].transform.position;
             TriCheck = true;
+            interactAudio.Play();
         }
         if (WinTerminalCollider.Raycast(ray, out hit, InteractDistance))
         {
@@ -85,6 +91,7 @@ public class InteractionManager : MonoBehaviour
                 EventManager.Instance.Notify(EventTypes.Events.GAME_VICTORY);
             }
         }
+
 
 
     }

@@ -11,10 +11,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 13397d414f7261d4fa26f007649db9b6, type: 2}
+    - target: {fileID: -1462051862901042274, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 864894329122252791, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_Name
       value: SNIPER
       objectReference: {fileID: 0}
+    - target: {fileID: 1167017196442476925, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5380d515f19d4f94d939f23c3c855739, type: 3}
     - target: {fileID: 1424503439752930300, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -29,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: reloadTime
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3291164878397180597, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: ammo.Array.data[0]
@@ -39,6 +47,10 @@ PrefabInstance:
       propertyPath: directEffect.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 564821bce4bec7c08aa2bf6ec6176c47, type: 2}
+    - target: {fileID: 4256962900231421176, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8199642896850837221, guid: f86252121534575c8b67a1d6f39d0c9b, type: 3}
       propertyPath: m_RootOrder
       value: 0
