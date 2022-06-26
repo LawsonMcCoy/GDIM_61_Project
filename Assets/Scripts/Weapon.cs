@@ -19,6 +19,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private List<WeaponEffect> directEffect; //effects applied to target that were hit directly
     [SerializeField] private List<WeaponEffect> indirectEffect; //effects applied to targets hit with AOE
     [SerializeField] private List<WeaponEffect> selfEffect; //effects applied to wielder if the weapon when target is hit
+
+    [SerializeField] private ParticleSystem muzzleFlash; //The particile system that is played for the muzzle flash
     
 
     private bool[] triggerHeld = new bool[2]; //booleans to keep track of when one of the triggers
@@ -185,6 +187,7 @@ public class Weapon : MonoBehaviour
             if (Time.time > timeOfCooldownExpiration)
             {
                 audio[fireIndex].Play();
+                muzzleFlash.Play();
                 ammo[fireIndex].Fire(baseRange, transform, targets);
 
                 //update cooldown time
