@@ -12,6 +12,8 @@ public class MovementScript : MonoBehaviour
     private Vector2 rotationValue;
     private bool sprinting;
 
+    AudioSource audioSrc;
+
     [SerializeField] private CharacterController Controller; //should be replaced with player.controller
     [SerializeField] private Rigidbody playerRigidbody; //should be replaced with entity.rigidbody
     [SerializeField] private Player player;
@@ -34,6 +36,7 @@ public class MovementScript : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -67,6 +70,18 @@ public class MovementScript : MonoBehaviour
         {
             //if ground set vertical velocity to 0
             Velocity.y = 0;
+        }
+
+        if (Controller.velocity.Equals(Vector3.zero))
+        {
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+            }
+            else
+            {
+                audioSrc.Stop();
+            }
         }
     }
 

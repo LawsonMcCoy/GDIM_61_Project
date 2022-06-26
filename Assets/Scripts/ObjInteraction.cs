@@ -7,7 +7,7 @@ public class ObjInteraction : MonoBehaviour
     // Start is called before the first frame update
     public GameObject UI;
 
-    [SerializeField] private AudioSource interactAudio;
+    //[SerializeField] private AudioSource interactAudio;
 
     public GameObject UICross;
 
@@ -30,6 +30,6 @@ public class ObjInteraction : MonoBehaviour
                 UICross.SetActive(true);
             }
         }
-        interactAudio.Play();
+        //interactAudio.Play();
     }
 }

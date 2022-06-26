@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 5118955853986194874}
   - component: {fileID: 7081696405261643601}
   - component: {fileID: 8219288458900322035}
-  - component: {fileID: 3003577251142799775}
+  - component: {fileID: 2979702401931022741}
   m_Layer: 3
   m_Name: Player
   m_TagString: PlayerMain
@@ -725,7 +725,7 @@ MonoBehaviour:
     m_Bits: 64
   weaponPosition: {x: 0.56, y: 0.56, z: 0.59}
   speed: 5
-  startingWeapon: {fileID: 9040553203588641355, guid: 40f298daaa84b33f1a39bed16327d515, type: 3}
+  startingWeapon: {fileID: 5103739952675927239, guid: a23abfbe5518883d3ba24c2016b232b1, type: 3}
   healthManagerInspector: {fileID: 5118955853986194874}
   lookAtRig: {fileID: 5558648839089993385}
   InteractDistance: 5
@@ -814,9 +814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 9136689208160940340}
-  interactAudio: {fileID: 3003577251142799775}
   UICross: {fileID: 3907270296714555089}
---- !u!82 &3003577251142799775
+--- !u!82 &2979702401931022741
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -826,7 +825,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dba0f340a5209f641b3b1991f1b81155, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3b8907f61d32bc49be9a0bef03f893b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
