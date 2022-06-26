@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    //Audio that will play when reloading the gun
+    [SerializeField] private AudioSource reloadAudio;
+
     //The indices for the primary and secondary firing states
     private const int PRIMARY_FIRE = 0;
     private const int SECONDARY_FIRE = 1;
@@ -178,12 +181,14 @@ public class Weapon : MonoBehaviour
 
     private void Fire(int fireIndex)
     {
-        Debug.Log($"Firing weapon {fireIndex}");
+
+        
         if (numberOfLoadedBullets > 0) //there are bullets loaded
         {
             //fire a bullet
             if (Time.time > timeOfCooldownExpiration)
             {
+                Debug.Log($"Audio Source {audio[fireIndex]}");
                 audio[fireIndex].Play();
                 ammo[fireIndex].Fire(baseRange, transform, targets);
 
@@ -203,6 +208,8 @@ public class Weapon : MonoBehaviour
 
         //add reload time to the cooldown
         timeOfCooldownExpiration = Time.time + reloadTime;
+
+        reloadAudio.Play();
     }
 
     //A small getter function for checking the number of bullets currently loaded in the magazine

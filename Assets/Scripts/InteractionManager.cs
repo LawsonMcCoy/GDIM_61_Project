@@ -25,6 +25,8 @@ public class InteractionManager : MonoBehaviour
     private bool BoxCheck;
     private bool TriCheck;
 
+    
+
 
     [SerializeField]
     LayerMask InteractableLayer = 1 << 8;
@@ -85,6 +87,8 @@ public class InteractionManager : MonoBehaviour
                 EventManager.Instance.Notify(EventTypes.Events.GAME_VICTORY);
             }
         }
+
+        
 
 
     }
