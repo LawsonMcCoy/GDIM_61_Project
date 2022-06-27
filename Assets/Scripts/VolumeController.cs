@@ -11,7 +11,15 @@ public class VolumeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadValues();
+        if (!PlayerPrefs.HasKey("VolumeValue"))
+        {
+            PlayerPrefs.SetFloat("VolumeValue", 1);
+        }
+        else
+        {
+            LoadValues();
+
+        }
     }
 
     public void VolumeSlider(float vol)
